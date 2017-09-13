@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.EcoreUtil2;
-import org.osate.aadl2.Aadl2Package;
 import org.osate.aadl2.AadlPackage;
 import org.osate.aadl2.AnnexSubclause;
 import org.osate.aadl2.Classifier;
@@ -153,8 +152,9 @@ public class EMV2Util {
 		EList<ErrorModelSubclause> result = new BasicEList<ErrorModelSubclause>();
 		if (cl == null) {
 			ErrorModelSubclause localemsc = getContainingErrorModelSubclause(element);
-			if (localemsc != null)
+			if (localemsc != null) {
 				result.add(localemsc);
+			}
 			return result;
 		}
 		if (cl instanceof ComponentImplementation) {
@@ -175,13 +175,14 @@ public class EMV2Util {
 	public static ComponentClassifier getAssociatedClassifier(Element emv2Element) {
 
 		ComponentClassifier cl = (ComponentClassifier) emv2Element.getContainingClassifier();
-		if (cl != null)
+		if (cl != null) {
 			return cl;
+		}
 		ErrorModelSubclause emsc = getContainingErrorModelSubclause(emv2Element);
-		if (emsc == null || emsc.getName().equalsIgnoreCase("EMV2"))
+		if (emsc == null || emsc.getName().equalsIgnoreCase("EMV2")) {
 			return null;
-		return (ComponentClassifier) EMFIndexRetrieval.getEObjectOfType(emsc,
-				Aadl2Package.eINSTANCE.getComponentClassifier(), emsc.getQualifiedName());
+		}
+		return emsc.getTarget();
 	}
 
 	/**
@@ -207,8 +208,9 @@ public class EMV2Util {
 		}
 		// separately stored EMV2 subclause
 		ErrorModelSubclause emsc = getAssociatedEMV2Subclause(cl);
-		if (emsc != null)
+		if (emsc != null) {
 			return emsc;
+		}
 		// embedded EMV2 subclause
 		return getEmbeddedEMV2Subclause(cl);
 	}
@@ -314,8 +316,9 @@ public class EMV2Util {
 	}
 
 	public static String getPath(FeatureorPPReference ref) {
-		if (ref == null)
+		if (ref == null) {
 			return "";
+		}
 		if (ref.getNext() != null) {
 			return ref.getFeatureorPP().getName() + "." + getPath(ref.getNext());
 		} else {
@@ -846,9 +849,9 @@ public class EMV2Util {
 
 	/**
 	 * find the error flow whose outgoing error propagation point is flowSource
-	* @param eps List of error propagations
-	* @param flowSource ErrorPropagation
-	* @return ErrorFlow list
+	 * @param eps List of error propagations
+	 * @param flowSource ErrorPropagation
+	 * @return ErrorFlow list
 	 */
 	public static EList<ErrorFlow> findReverseErrorFlowFrom(Collection<ErrorFlow> efs, ErrorPropagation flowSource) {
 		EList<ErrorFlow> result = new BasicEList<ErrorFlow>();
@@ -2016,13 +2019,15 @@ public class EMV2Util {
 	 */
 	public static Feature getFeature(ErrorPropagation ep) {
 		FeatureorPPReference forppref = ep.getFeatureorPPRef();
-		if (forppref == null)
+		if (forppref == null) {
 			return null;
+		}
 		while (forppref.getNext() != null) {
 			forppref = forppref.getNext();
 		}
-		if (forppref.getFeatureorPP() instanceof Feature)
+		if (forppref.getFeatureorPP() instanceof Feature) {
 			return (Feature) forppref.getFeatureorPP();
+		}
 		return null;
 	}
 
@@ -2092,11 +2097,13 @@ public class EMV2Util {
 	}
 
 	public static String getPrintNameWithoutType(EMV2Path ep) {
-		if (ep == null)
+		if (ep == null) {
 			return "";
+		}
 		EMV2PathElement epe = ep.getEmv2Target();
-		if (epe == null)
+		if (epe == null) {
 			return "";
+		}
 		ContainmentPathElement cpe = ep.getContainmentPath();
 		String prefix;
 		if (cpe == null) {
@@ -2119,11 +2126,13 @@ public class EMV2Util {
 	}
 
 	public static String getPrintName(EMV2Path ep) {
-		if (ep == null)
+		if (ep == null) {
 			return "";
+		}
 		EMV2PathElement epe = ep.getEmv2Target();
-		if (epe == null)
+		if (epe == null) {
 			return "";
+		}
 		ContainmentPathElement cpe = ep.getContainmentPath();
 		String prefix;
 		if (cpe == null) {
@@ -2140,7 +2149,7 @@ public class EMV2Util {
 		}
 		if (epe.getEmv2PropagationKind() != null) {
 			return prefix + epe.getEmv2PropagationKind()
-					+ (epe.getErrorType() != null ? "." + epe.getErrorType().getName() : "");
+			+ (epe.getErrorType() != null ? "." + epe.getErrorType().getName() : "");
 		} else {
 			return getPathName(epe);
 		}
@@ -2154,7 +2163,7 @@ public class EMV2Util {
 	/**
 	 * This method returns the error type if referenced in the containment path
 	 * This applies only to paths in EMV2PropertionAssociation
-	 * In ConditionElement the type or type set is 
+	 * In ConditionElement the type or type set is
 	 * @param ep
 	 * @return
 	 */
@@ -2170,7 +2179,7 @@ public class EMV2Util {
 	 * Get the error model element pointed to by the EMV2Path.
 	 * An error model element can be ErrorSource, ErrorSink, ErrorPath, ErrorPropagaiton, ErrorState,
 	 * ErrorBehaviorEvent (ErrorEvent, RecoverEvent, RepairEvent), ErrorBehaviorTransition
-	 * This works for condition elements (ConditionElement, SConditionElement) 
+	 * This works for condition elements (ConditionElement, SConditionElement)
 	 * @param ce ConditionElement
 	 * @return NamedElement
 	 */
@@ -2206,8 +2215,9 @@ public class EMV2Util {
 	 */
 	public static ErrorPropagation getErrorPropagation(EMV2Path epath) {
 		NamedElement res = getErrorModelElement(epath);
-		if (res instanceof ErrorPropagation)
+		if (res instanceof ErrorPropagation) {
 			return (ErrorPropagation) res;
+		}
 		return null;
 	}
 
@@ -2218,11 +2228,13 @@ public class EMV2Util {
 	 * @return EventOrPropagation
 	 */
 	public static EventOrPropagation getErrorEventOrPropagation(EMV2Path epath) {
-		if (epath == null)
+		if (epath == null) {
 			return null;
+		}
 		NamedElement res = getErrorModelElement(epath);
-		if (res instanceof ErrorPropagation || res instanceof ErrorBehaviorEvent)
+		if (res instanceof ErrorPropagation || res instanceof ErrorBehaviorEvent) {
 			return (EventOrPropagation) res;
+		}
 		return null;
 	}
 
@@ -2230,13 +2242,14 @@ public class EMV2Util {
 	 * Get the error model element pointed to by the EMV2Path.
 	 * An error model element can be ErrorSource, ErrorSink, ErrorPath, ErrorPropagaiton, ErrorState,
 	 * ErrorBehaviorEvent (ErrorEvent, RecoverEvent, RepairEvent), ErrorBehaviorTransition
-	 * This works for condition elements (ConditionElement, SConditionElement) 
+	 * This works for condition elements (ConditionElement, SConditionElement)
 	 * @param epath EMV2Path
 	 * @return NamedElement
 	 */
 	public static NamedElement getErrorModelElement(EMV2Path epath) {
-		if (epath == null)
+		if (epath == null) {
 			return null;
+		}
 		EMV2PathElement target = getLast(epath.getEmv2Target());
 		if (target.getNamedElement() instanceof ErrorTypes) {
 			EObject prev = target.eContainer();
@@ -2351,8 +2364,9 @@ public class EMV2Util {
 	}
 
 	public static ContainmentPathElement getLast(ContainmentPathElement ep) {
-		if (ep == null)
+		if (ep == null) {
 			return null;
+		}
 		ContainmentPathElement result = ep;
 		while (result.getPath() != null) {
 			result = result.getPath();
@@ -2361,12 +2375,14 @@ public class EMV2Util {
 	}
 
 	public static String getPathNameWithoutType(EMV2PathElement ep) {
-		if (ep == null || ep.getNamedElement() instanceof ErrorTypes)
+		if (ep == null || ep.getNamedElement() instanceof ErrorTypes) {
 			return "";
+		}
 		String path = getPathNameWithoutType(ep.getPath());
 		String myname = getPrintName(ep.getNamedElement());
-		if (myname == null)
+		if (myname == null) {
 			return path;
+		}
 		if (!path.isEmpty()) {
 			return myname + "." + path;
 		} else {
@@ -2375,12 +2391,14 @@ public class EMV2Util {
 	}
 
 	public static String getPathName(EMV2PathElement ep) {
-		if (ep == null)
+		if (ep == null) {
 			return "";
+		}
 		String path = getPathName(ep.getPath());
 		String myname = getPrintName(ep.getNamedElement());
-		if (myname == null)
+		if (myname == null) {
 			return path;
+		}
 		if (!path.isEmpty()) {
 			return myname + "." + path;
 		} else {
@@ -2902,8 +2920,9 @@ public class EMV2Util {
 			return null;
 		}
 		FeatureorPPReference forppref = ep.getFeatureorPPRef();
-		if (forppref == null || forppref.getFeatureorPP() instanceof PropagationPoint)
+		if (forppref == null || forppref.getFeatureorPP() instanceof PropagationPoint) {
 			return null;
+		}
 		FeatureInstance container = ci.findFeatureInstance((Feature) forppref.getFeatureorPP());
 		while (forppref.getNext() != null) {
 			forppref = forppref.getNext();

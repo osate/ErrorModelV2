@@ -25,11 +25,11 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	protected AbstractElementAlias match_ConditionTerm_LeftParenthesisKeyword_4_0_p;
 	protected AbstractElementAlias match_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q;
 	protected AbstractElementAlias match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q;
-	protected AbstractElementAlias match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q;
-	protected AbstractElementAlias match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q;
-	protected AbstractElementAlias match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_10_0_EndConnectionKeywordsParserRuleCall_10_3_SemicolonKeyword_10_4__q;
-	protected AbstractElementAlias match_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_7_0_EndPropagationsKeywordsParserRuleCall_7_3_SemicolonKeyword_7_4__q;
-	protected AbstractElementAlias match_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_11_0_EndPathsKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q;
+	protected AbstractElementAlias match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_9_0_EndComponentKeywordsParserRuleCall_9_7_SemicolonKeyword_9_8__q;
+	protected AbstractElementAlias match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_10_0_EndCompositeKeywordsParserRuleCall_10_2_SemicolonKeyword_10_3__q;
+	protected AbstractElementAlias match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_11_0_EndConnectionKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q;
+	protected AbstractElementAlias match_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_8_0_EndPropagationsKeywordsParserRuleCall_8_3_SemicolonKeyword_8_4__q;
+	protected AbstractElementAlias match_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_12_0_EndPathsKeywordsParserRuleCall_12_3_SemicolonKeyword_12_4__q;
 	protected AbstractElementAlias match_ErrorModelLibrary___ErrorTypesKeywordsParserRuleCall_1_0_EndTypesKeywordsParserRuleCall_1_5_SemicolonKeyword_1_6__q;
 	protected AbstractElementAlias match_ErrorModelSubclause___ComponentErrorBehaviorKeywordsParserRuleCall_6_0_EndComponentKeywordsParserRuleCall_6_7_SemicolonKeyword_6_8__q;
 	protected AbstractElementAlias match_ErrorModelSubclause___CompositeErrorBehaviorKeywordsParserRuleCall_7_0_EndCompositeKeywordsParserRuleCall_7_2_SemicolonKeyword_7_3__q;
@@ -46,11 +46,11 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 		match_ConditionTerm_LeftParenthesisKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getConditionTermAccess().getLeftParenthesisKeyword_4_0());
 		match_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getErrorTypesKeywordsParserRuleCall_0_1_2_0()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getEndTypesKeywordsParserRuleCall_0_1_2_5()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getSemicolonKeyword_0_1_2_6()));
 		match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getErrorTypesKeywordsParserRuleCall_1_6_0()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getEndTypesKeywordsParserRuleCall_1_6_5()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getSemicolonKeyword_1_6_6()));
-		match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getComponentErrorBehaviorKeywordsParserRuleCall_8_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndComponentKeywordsParserRuleCall_8_7()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_8_8()));
-		match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getCompositeErrorBehaviorKeywordsParserRuleCall_9_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndCompositeKeywordsParserRuleCall_9_2()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_9_3()));
-		match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_10_0_EndConnectionKeywordsParserRuleCall_10_3_SemicolonKeyword_10_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getConnectionErrorKeywordsParserRuleCall_10_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndConnectionKeywordsParserRuleCall_10_3()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_10_4()));
-		match_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_7_0_EndPropagationsKeywordsParserRuleCall_7_3_SemicolonKeyword_7_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getErrorPropagationsKeywordsParserRuleCall_7_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndPropagationsKeywordsParserRuleCall_7_3()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_7_4()));
-		match_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_11_0_EndPathsKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getPropagationPathsKeywordsParserRuleCall_11_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndPathsKeywordsParserRuleCall_11_3()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_11_4()));
+		match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_9_0_EndComponentKeywordsParserRuleCall_9_7_SemicolonKeyword_9_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getComponentErrorBehaviorKeywordsParserRuleCall_9_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndComponentKeywordsParserRuleCall_9_7()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_9_8()));
+		match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_10_0_EndCompositeKeywordsParserRuleCall_10_2_SemicolonKeyword_10_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getCompositeErrorBehaviorKeywordsParserRuleCall_10_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndCompositeKeywordsParserRuleCall_10_2()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_10_3()));
+		match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_11_0_EndConnectionKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getConnectionErrorKeywordsParserRuleCall_11_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndConnectionKeywordsParserRuleCall_11_3()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_11_4()));
+		match_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_8_0_EndPropagationsKeywordsParserRuleCall_8_3_SemicolonKeyword_8_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getErrorPropagationsKeywordsParserRuleCall_8_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndPropagationsKeywordsParserRuleCall_8_3()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_8_4()));
+		match_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_12_0_EndPathsKeywordsParserRuleCall_12_3_SemicolonKeyword_12_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getPropagationPathsKeywordsParserRuleCall_12_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndPathsKeywordsParserRuleCall_12_3()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_12_4()));
 		match_ErrorModelLibrary___ErrorTypesKeywordsParserRuleCall_1_0_EndTypesKeywordsParserRuleCall_1_5_SemicolonKeyword_1_6__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getErrorModelLibraryAccess().getErrorTypesKeywordsParserRuleCall_1_0()), new TokenAlias(false, false, grammarAccess.getErrorModelLibraryAccess().getEndTypesKeywordsParserRuleCall_1_5()), new TokenAlias(false, false, grammarAccess.getErrorModelLibraryAccess().getSemicolonKeyword_1_6()));
 		match_ErrorModelSubclause___ComponentErrorBehaviorKeywordsParserRuleCall_6_0_EndComponentKeywordsParserRuleCall_6_7_SemicolonKeyword_6_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getErrorModelSubclauseAccess().getComponentErrorBehaviorKeywordsParserRuleCall_6_0()), new TokenAlias(false, false, grammarAccess.getErrorModelSubclauseAccess().getEndComponentKeywordsParserRuleCall_6_7()), new TokenAlias(false, false, grammarAccess.getErrorModelSubclauseAccess().getSemicolonKeyword_6_8()));
 		match_ErrorModelSubclause___CompositeErrorBehaviorKeywordsParserRuleCall_7_0_EndCompositeKeywordsParserRuleCall_7_2_SemicolonKeyword_7_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getErrorModelSubclauseAccess().getCompositeErrorBehaviorKeywordsParserRuleCall_7_0()), new TokenAlias(false, false, grammarAccess.getErrorModelSubclauseAccess().getEndCompositeKeywordsParserRuleCall_7_2()), new TokenAlias(false, false, grammarAccess.getErrorModelSubclauseAccess().getSemicolonKeyword_7_3()));
@@ -588,16 +588,16 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 				emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q.equals(syntax))
 				emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q.equals(syntax))
-				emit_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q.equals(syntax))
-				emit_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_10_0_EndConnectionKeywordsParserRuleCall_10_3_SemicolonKeyword_10_4__q.equals(syntax))
-				emit_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_10_0_EndConnectionKeywordsParserRuleCall_10_3_SemicolonKeyword_10_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_7_0_EndPropagationsKeywordsParserRuleCall_7_3_SemicolonKeyword_7_4__q.equals(syntax))
-				emit_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_7_0_EndPropagationsKeywordsParserRuleCall_7_3_SemicolonKeyword_7_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_11_0_EndPathsKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q.equals(syntax))
-				emit_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_11_0_EndPathsKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_9_0_EndComponentKeywordsParserRuleCall_9_7_SemicolonKeyword_9_8__q.equals(syntax))
+				emit_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_9_0_EndComponentKeywordsParserRuleCall_9_7_SemicolonKeyword_9_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_10_0_EndCompositeKeywordsParserRuleCall_10_2_SemicolonKeyword_10_3__q.equals(syntax))
+				emit_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_10_0_EndCompositeKeywordsParserRuleCall_10_2_SemicolonKeyword_10_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_11_0_EndConnectionKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q.equals(syntax))
+				emit_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_11_0_EndConnectionKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_8_0_EndPropagationsKeywordsParserRuleCall_8_3_SemicolonKeyword_8_4__q.equals(syntax))
+				emit_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_8_0_EndPropagationsKeywordsParserRuleCall_8_3_SemicolonKeyword_8_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_12_0_EndPathsKeywordsParserRuleCall_12_3_SemicolonKeyword_12_4__q.equals(syntax))
+				emit_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_12_0_EndPathsKeywordsParserRuleCall_12_3_SemicolonKeyword_12_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ErrorModelLibrary___ErrorTypesKeywordsParserRuleCall_1_0_EndTypesKeywordsParserRuleCall_1_5_SemicolonKeyword_1_6__q.equals(syntax))
 				emit_ErrorModelLibrary___ErrorTypesKeywordsParserRuleCall_1_0_EndTypesKeywordsParserRuleCall_1_5_SemicolonKeyword_1_6__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ErrorModelSubclause___ComponentErrorBehaviorKeywordsParserRuleCall_6_0_EndComponentKeywordsParserRuleCall_6_7_SemicolonKeyword_6_8__q.equals(syntax))
@@ -733,7 +733,60 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ambiguity) 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         'properties' 
+	 *         properties+=EMV2PropertyAssociation
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ambiguity) 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         EndSubclauseKeywords 
+	 *         ';' 
+	 *         (rule end)
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ambiguity) 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         PropagationPathsKeywords 
+	 *         paths+=PropagationPath
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ambiguity) 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         PropagationPathsKeywords 
+	 *         points+=PropagationPoint
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ambiguity) 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         ConnectionErrorKeywords 
+	 *         UseTransformationsKeywords 
+	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
+	 *     )
+	 *     (
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -743,7 +796,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -754,7 +807,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -763,7 +816,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -772,7 +825,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -781,65 +834,12 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         ConnectionErrorKeywords 
 	 *         connectionErrorSources+=ConnectionErrorSource
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         'properties' 
-	 *         properties+=EMV2PropertyAssociation
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         EndSubclauseKeywords 
-	 *         ';' 
-	 *         (rule end)
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         PropagationPathsKeywords 
-	 *         paths+=PropagationPath
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         PropagationPathsKeywords 
-	 *         points+=PropagationPoint
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         ConnectionErrorKeywords 
-	 *         UseTransformationsKeywords 
-	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
 	 *         typeEquivalence=[TypeMappingSet|QEMREF] 
@@ -1091,15 +1091,15 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     )
 	 *     flows+=ErrorFlow EndPropagationsKeywords ';' (ambiguity) (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
 	 *     flows+=ErrorFlow EndPropagationsKeywords ';' (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
-	 *     name=QCREF (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     propagations+=ErrorPropagation EndPropagationsKeywords ';' (ambiguity) (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
 	 *     propagations+=ErrorPropagation EndPropagationsKeywords ';' (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
+	 *     target=[ComponentClassifier|QCREF] (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     typeMappingSet=[TypeMappingSet|QEMREF] ';' (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     useBehavior=[ErrorBehaviorStateMachine|QEMREF] ';' (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     useTypes+=[ErrorModelLibrary|QEMREF] ';' (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 */
-	protected void emit_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_9_0_EndComponentKeywordsParserRuleCall_9_7_SemicolonKeyword_9_8__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1203,7 +1203,81 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
+	 *         EndComponentKeywords 
+	 *         ';' 
+	 *         (ambiguity) 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         'properties' 
+	 *         properties+=EMV2PropertyAssociation
+	 *     )
+	 *     (
+	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
+	 *         EndComponentKeywords 
+	 *         ';' 
+	 *         (ambiguity) 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         EndSubclauseKeywords 
+	 *         ';' 
+	 *         (rule end)
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
+	 *         (ambiguity) 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         'properties' 
+	 *         properties+=EMV2PropertyAssociation
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
+	 *         (ambiguity) 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         EndSubclauseKeywords 
+	 *         ';' 
+	 *         (rule end)
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
+	 *         (ambiguity) 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         PropagationPathsKeywords 
+	 *         paths+=PropagationPath
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
+	 *         (ambiguity) 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         PropagationPathsKeywords 
+	 *         points+=PropagationPoint
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
+	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
+	 *         (ambiguity) 
+	 *         ConnectionErrorKeywords 
+	 *         UseTransformationsKeywords 
+	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
+	 *     )
+	 *     (
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1213,7 +1287,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1224,7 +1298,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1233,7 +1307,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1242,7 +1316,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1251,86 +1325,12 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
 	 *         ConnectionErrorKeywords 
 	 *         connectionErrorSources+=ConnectionErrorSource
-	 *     )
-	 *     (
-	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
-	 *         EndComponentKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         'properties' 
-	 *         properties+=EMV2PropertyAssociation
-	 *     )
-	 *     (
-	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
-	 *         EndComponentKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         EndSubclauseKeywords 
-	 *         ';' 
-	 *         (rule end)
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
-	 *         (ambiguity) 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         'properties' 
-	 *         properties+=EMV2PropertyAssociation
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
-	 *         (ambiguity) 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         EndSubclauseKeywords 
-	 *         ';' 
-	 *         (rule end)
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
-	 *         (ambiguity) 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         PropagationPathsKeywords 
-	 *         paths+=PropagationPath
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
-	 *         (ambiguity) 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         PropagationPathsKeywords 
-	 *         points+=PropagationPoint
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
-	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
-	 *         (ambiguity) 
-	 *         ConnectionErrorKeywords 
-	 *         UseTransformationsKeywords 
-	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
 	 *         transitions+=ErrorBehaviorTransition 
@@ -1653,7 +1653,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     useTransformation=[TypeTransformationSet|QEMREF] ';' EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords UseTransformationsKeywords typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     useTransformation=[TypeTransformationSet|QEMREF] ';' EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
 	 */
-	protected void emit_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_10_0_EndCompositeKeywordsParserRuleCall_10_2_SemicolonKeyword_10_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -1758,8 +1758,30 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
-	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
+	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
+	 *         EndComponentKeywords 
+	 *         ';' 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ambiguity) 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         'properties' 
+	 *         properties+=EMV2PropertyAssociation
+	 *     )
+	 *     (
+	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
+	 *         EndComponentKeywords 
+	 *         ';' 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ambiguity) 
+	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
+	 *         EndSubclauseKeywords 
+	 *         ';' 
+	 *         (rule end)
+	 *     )
+	 *     (
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -1768,8 +1790,9 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
-	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -1779,8 +1802,9 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
-	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -1788,8 +1812,9 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
-	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
+	 *         propagations+=ErrorPropagation 
+	 *         EndPropagationsKeywords 
+	 *         ';' 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -1797,30 +1822,8 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
-	 *         EndComponentKeywords 
-	 *         ';' 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ambiguity) 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         'properties' 
-	 *         properties+=EMV2PropertyAssociation
-	 *     )
-	 *     (
-	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
-	 *         EndComponentKeywords 
-	 *         ';' 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ambiguity) 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         EndSubclauseKeywords 
-	 *         ';' 
-	 *         (rule end)
-	 *     )
-	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
+	 *         target=[ComponentClassifier|QCREF] 
+	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -1829,9 +1832,8 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
+	 *         target=[ComponentClassifier|QCREF] 
+	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -1841,9 +1843,8 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
+	 *         target=[ComponentClassifier|QCREF] 
+	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -1851,9 +1852,8 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         propagations+=ErrorPropagation 
-	 *         EndPropagationsKeywords 
-	 *         ';' 
+	 *         target=[ComponentClassifier|QCREF] 
+	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ambiguity) 
@@ -2094,7 +2094,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     useTransformation=[TypeTransformationSet|QEMREF] ';' EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords paths+=PropagationPath
 	 *     useTransformation=[TypeTransformationSet|QEMREF] ';' EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords points+=PropagationPoint
 	 */
-	protected void emit_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_10_0_EndConnectionKeywordsParserRuleCall_10_3_SemicolonKeyword_10_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_11_0_EndConnectionKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2104,7 +2104,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2114,7 +2114,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2125,7 +2125,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2134,7 +2134,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2143,7 +2143,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2152,7 +2152,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2407,13 +2407,13 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         ConnectionErrorKeywords 
 	 *         connectionErrorSources+=ConnectionErrorSource
 	 *     )
-	 *     name=QCREF (ambiguity) (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? CompositeErrorBehaviorKeywords 'states' states+=CompositeState
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'detections' errorDetections+=ErrorDetection
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'events' events+=ErrorBehaviorEvent
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'propagations' outgoingPropagationConditions+=OutgoingPropagationCondition
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'transitions' transitions+=ErrorBehaviorTransition
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords ModeMappingsKeywords errorStateToModeMappings+=ErrorStateToModeMapping
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords UseTransformationsKeywords useTransformation=[TypeTransformationSet|QEMREF]
+	 *     target=[ComponentClassifier|QCREF] (ambiguity) (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? CompositeErrorBehaviorKeywords 'states' states+=CompositeState
+	 *     target=[ComponentClassifier|QCREF] (ambiguity) ComponentErrorBehaviorKeywords 'detections' errorDetections+=ErrorDetection
+	 *     target=[ComponentClassifier|QCREF] (ambiguity) ComponentErrorBehaviorKeywords 'events' events+=ErrorBehaviorEvent
+	 *     target=[ComponentClassifier|QCREF] (ambiguity) ComponentErrorBehaviorKeywords 'propagations' outgoingPropagationConditions+=OutgoingPropagationCondition
+	 *     target=[ComponentClassifier|QCREF] (ambiguity) ComponentErrorBehaviorKeywords 'transitions' transitions+=ErrorBehaviorTransition
+	 *     target=[ComponentClassifier|QCREF] (ambiguity) ComponentErrorBehaviorKeywords ModeMappingsKeywords errorStateToModeMappings+=ErrorStateToModeMapping
+	 *     target=[ComponentClassifier|QCREF] (ambiguity) ComponentErrorBehaviorKeywords UseTransformationsKeywords useTransformation=[TypeTransformationSet|QEMREF]
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ambiguity) (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ambiguity) ComponentErrorBehaviorKeywords 'detections' errorDetections+=ErrorDetection
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ambiguity) ComponentErrorBehaviorKeywords 'events' events+=ErrorBehaviorEvent
@@ -2443,7 +2443,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     useTypes+=[ErrorModelLibrary|QEMREF] ';' (ambiguity) ComponentErrorBehaviorKeywords ModeMappingsKeywords errorStateToModeMappings+=ErrorStateToModeMapping
 	 *     useTypes+=[ErrorModelLibrary|QEMREF] ';' (ambiguity) ComponentErrorBehaviorKeywords UseTransformationsKeywords useTransformation=[TypeTransformationSet|QEMREF]
 	 */
-	protected void emit_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_7_0_EndPropagationsKeywordsParserRuleCall_7_3_SemicolonKeyword_7_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EMV2Subclause___ErrorPropagationsKeywordsParserRuleCall_8_0_EndPropagationsKeywordsParserRuleCall_8_3_SemicolonKeyword_8_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -2539,27 +2539,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
-	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
-	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (ambiguity) 
-	 *         'properties' 
-	 *         properties+=EMV2PropertyAssociation
-	 *     )
-	 *     (
-	 *         name=QCREF 
-	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
-	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (ambiguity) 
-	 *         EndSubclauseKeywords 
-	 *         ';' 
-	 *         (rule end)
-	 *     )
-	 *     (
 	 *         outgoingPropagationConditions+=OutgoingPropagationCondition 
 	 *         EndComponentKeywords 
 	 *         ';' 
@@ -2595,6 +2574,27 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         propagations+=ErrorPropagation 
 	 *         EndPropagationsKeywords 
 	 *         ';' 
+	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (ambiguity) 
+	 *         EndSubclauseKeywords 
+	 *         ';' 
+	 *         (rule end)
+	 *     )
+	 *     (
+	 *         target=[ComponentClassifier|QCREF] 
+	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
+	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
+	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
+	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
+	 *         (ambiguity) 
+	 *         'properties' 
+	 *         properties+=EMV2PropertyAssociation
+	 *     )
+	 *     (
+	 *         target=[ComponentClassifier|QCREF] 
+	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
@@ -2746,7 +2746,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     typeTransformationSet=[TypeTransformationSet|QEMREF] ';' EndConnectionKeywords ';' (ambiguity) 'properties' properties+=EMV2PropertyAssociation
 	 *     typeTransformationSet=[TypeTransformationSet|QEMREF] ';' EndConnectionKeywords ';' (ambiguity) EndSubclauseKeywords ';' (rule end)
 	 */
-	protected void emit_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_11_0_EndPathsKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_12_0_EndPathsKeywordsParserRuleCall_12_3_SemicolonKeyword_12_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

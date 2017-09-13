@@ -103,7 +103,8 @@ ErrorModelSubclause returns ErrorModelSubclause:
 
 
 EMV2Subclause returns ErrorModelSubclause:
-     {ErrorModelSubclause} 'subclause' name=QCREF
+     {ErrorModelSubclause} 'subclause' name=QCREF 
+     target=[aadl2::ComponentClassifier|QCREF]
      //'{**' 
    (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (',' useTypes+=[ErrorModelLibrary|QEMREF] )* ';')?
    (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF] ';')?

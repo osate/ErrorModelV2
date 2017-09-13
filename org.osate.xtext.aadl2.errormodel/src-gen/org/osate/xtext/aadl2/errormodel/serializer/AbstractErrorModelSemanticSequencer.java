@@ -767,6 +767,7 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 	 * Constraint:
 	 *     (
 	 *         name=QCREF 
+	 *         target=[ComponentClassifier|QCREF] 
 	 *         (useTypes+=[ErrorModelLibrary|QEMREF] useTypes+=[ErrorModelLibrary|QEMREF]*)? 
 	 *         typeEquivalence=[TypeMappingSet|QEMREF]? 
 	 *         typeMappingSet=[TypeMappingSet|QEMREF]? 

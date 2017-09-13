@@ -64,6 +64,7 @@ import static extension org.osate.aadl2.modelsupport.util.AadlUtil.getBaseProper
 import static extension org.osate.xtext.aadl2.errormodel.util.EMV2Util.*
 import static extension org.osate.xtext.aadl2.errormodel.util.ErrorModelUtil.getAllErrorTypes
 import static extension org.osate.xtext.aadl2.errormodel.util.ErrorModelUtil.getAllTypesets
+import org.osate.aadl2.Aadl2Package
 
 /**
  * This class contains custom scoping description.
@@ -561,7 +562,8 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 	def scope_FeatureorPPReference_featureorPP(FeatureorPPReference context, EReference reference) {
 		switch parent : context.eContainer {
 			ErrorPropagation: {
-				val classifier = parent.getContainerOfType(Classifier)
+				var classifier = parent.getContainerOfType(Classifier)
+				if (classifier === null) classifier = parent.containingErrorModelSubclause.getTarget()
 				(classifier.getAllFeatures + classifier.allPropagationPoints + if (classifier instanceof ComponentImplementation) {
 					classifier.allInternalFeatures
 				} else {
@@ -575,7 +577,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 		}
 	}
 
-	def scope_ErrorSource_outgoing(Classifier context, EReference reference) {
+	def scope_ErrorSource_outgoing(ErrorModelSubclause context, EReference reference) {
 		context.scopeForErrorPropagation(DirectionType.OUT)
 	}
 
@@ -585,15 +587,15 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 		(typesets + behaviorStates).scopeFor
 	}
 
-	def scope_ErrorSink_incoming(Classifier context, EReference reference) {
+	def scope_ErrorSink_incoming(ErrorModelSubclause context, EReference reference) {
 		context.scopeForErrorPropagation(DirectionType.IN)
 	}
 
-	def scope_ErrorPath_incoming(Classifier context, EReference reference) {
+	def scope_ErrorPath_incoming(ErrorModelSubclause context, EReference reference) {
 		context.scopeForErrorPropagation(DirectionType.IN)
 	}
 
-	def scope_ErrorPath_outgoing(Classifier context, EReference reference) {
+	def scope_ErrorPath_outgoing(ErrorModelSubclause context, EReference reference) {
 		context.scopeForErrorPropagation(DirectionType.OUT)
 	}
 
@@ -636,7 +638,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 		context.allConnections.scopeFor
 	}
 
-	def scope_OutgoingPropagationCondition_outgoing(Classifier context, EReference reference) {
+	def scope_OutgoingPropagationCondition_outgoing(ErrorModelSubclause context, EReference reference) {
 		context.scopeForErrorPropagation(DirectionType.OUT)
 	}
 
@@ -743,7 +745,11 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 		propagations.map[EObjectDescription.create(propagationName, it)]
 	}
 
-	def public static scopeForErrorPropagation(Classifier context, DirectionType requiredDirection) {
+	def public static scopeForErrorPropagation(ErrorModelSubclause context, DirectionType requiredDirection) {
+		return scopeForErrorPropagation(context.associatedClassifier,requiredDirection)
+	}
+
+	def public static scopeForErrorPropagation(ComponentClassifier context, DirectionType requiredDirection) {
 		val propagations = context.allContainingClassifierEMV2Subclauses.map[propagations].flatten.filter [
 			!not && direction == requiredDirection
 		]
@@ -781,4 +787,16 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 
 		propagationsDescriptions + nextSubcomponentLevel
 	}
+	
+		
+	def IScope scope_ComponentClassifier(EObject context, EReference reference) {
+		return delegateGetScope(context, reference)
+	}
+		
+	def IScope scope_EMV2PropertyAssociation_property(EObject context, EReference reference) {
+		val res = delegateGetScope(context, reference)
+		val elems = res.allElements
+		return res
+	}
+	
 }

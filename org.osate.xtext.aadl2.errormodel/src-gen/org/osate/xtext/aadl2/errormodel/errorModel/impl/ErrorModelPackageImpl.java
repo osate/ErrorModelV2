@@ -480,6 +480,7 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
     isInited = true;
 
     // Initialize simple dependencies
+    EcorePackage.eINSTANCE.eClass();
     Aadl2Package.eINSTANCE.eClass();
 
     // Create package meta-data objects
@@ -685,6 +686,16 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
   public EReference getErrorModelSubclause_Properties()
   {
     return (EReference)errorModelSubclauseEClass.getEStructuralFeatures().get(17);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getErrorModelSubclause_Target()
+  {
+    return (EReference)errorModelSubclauseEClass.getEStructuralFeatures().get(18);
   }
 
   /**
@@ -2576,6 +2587,7 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
     createEReference(errorModelSubclauseEClass, ERROR_MODEL_SUBCLAUSE__POINTS);
     createEReference(errorModelSubclauseEClass, ERROR_MODEL_SUBCLAUSE__PATHS);
     createEReference(errorModelSubclauseEClass, ERROR_MODEL_SUBCLAUSE__PROPERTIES);
+    createEReference(errorModelSubclauseEClass, ERROR_MODEL_SUBCLAUSE__TARGET);
 
     errorModelLibraryEClass = createEClass(ERROR_MODEL_LIBRARY);
     createEReference(errorModelLibraryEClass, ERROR_MODEL_LIBRARY__USE_TYPES);
@@ -2922,6 +2934,7 @@ public class ErrorModelPackageImpl extends EPackageImpl implements ErrorModelPac
     initEReference(getErrorModelSubclause_Points(), this.getPropagationPoint(), null, "points", null, 0, -1, ErrorModelSubclause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getErrorModelSubclause_Paths(), this.getPropagationPath(), null, "paths", null, 0, -1, ErrorModelSubclause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getErrorModelSubclause_Properties(), this.getEMV2PropertyAssociation(), null, "properties", null, 0, -1, ErrorModelSubclause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getErrorModelSubclause_Target(), theAadl2Package.getComponentClassifier(), null, "target", null, 0, 1, ErrorModelSubclause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(errorModelLibraryEClass, ErrorModelLibrary.class, "ErrorModelLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getErrorModelLibrary_UseTypes(), this.getErrorModelLibrary(), null, "useTypes", null, 0, -1, ErrorModelLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

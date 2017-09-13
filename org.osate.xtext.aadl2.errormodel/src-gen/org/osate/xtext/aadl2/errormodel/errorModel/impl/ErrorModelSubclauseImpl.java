@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -17,6 +18,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.osate.aadl2.ComponentClassifier;
 
 import org.osate.aadl2.impl.AnnexSubclauseImpl;
 
@@ -65,6 +68,7 @@ import org.osate.xtext.aadl2.errormodel.errorModel.TypeTransformationSet;
  *   <li>{@link org.osate.xtext.aadl2.errormodel.errorModel.impl.ErrorModelSubclauseImpl#getPoints <em>Points</em>}</li>
  *   <li>{@link org.osate.xtext.aadl2.errormodel.errorModel.impl.ErrorModelSubclauseImpl#getPaths <em>Paths</em>}</li>
  *   <li>{@link org.osate.xtext.aadl2.errormodel.errorModel.impl.ErrorModelSubclauseImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link org.osate.xtext.aadl2.errormodel.errorModel.impl.ErrorModelSubclauseImpl#getTarget <em>Target</em>}</li>
  * </ul>
  *
  * @generated
@@ -250,6 +254,16 @@ public class ErrorModelSubclauseImpl extends AnnexSubclauseImpl implements Error
    * @ordered
    */
   protected EList<EMV2PropertyAssociation> properties;
+
+  /**
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTarget()
+   * @generated
+   * @ordered
+   */
+  protected ComponentClassifier target;
 
   /**
    * <!-- begin-user-doc -->
@@ -674,6 +688,49 @@ public class ErrorModelSubclauseImpl extends AnnexSubclauseImpl implements Error
    * <!-- end-user-doc -->
    * @generated
    */
+  public ComponentClassifier getTarget()
+  {
+    if (target != null && ((EObject)target).eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (ComponentClassifier)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__TARGET, oldTarget, target));
+      }
+    }
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ComponentClassifier basicGetTarget()
+  {
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTarget(ComponentClassifier newTarget)
+  {
+    ComponentClassifier oldTarget = target;
+    target = newTarget;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__TARGET, oldTarget, target));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -758,6 +815,9 @@ public class ErrorModelSubclauseImpl extends AnnexSubclauseImpl implements Error
         return getPaths();
       case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__PROPERTIES:
         return getProperties();
+      case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__TARGET:
+        if (resolve) return getTarget();
+        return basicGetTarget();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -840,6 +900,9 @@ public class ErrorModelSubclauseImpl extends AnnexSubclauseImpl implements Error
         getProperties().clear();
         getProperties().addAll((Collection<? extends EMV2PropertyAssociation>)newValue);
         return;
+      case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__TARGET:
+        setTarget((ComponentClassifier)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -908,6 +971,9 @@ public class ErrorModelSubclauseImpl extends AnnexSubclauseImpl implements Error
       case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__PROPERTIES:
         getProperties().clear();
         return;
+      case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__TARGET:
+        setTarget((ComponentClassifier)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -958,6 +1024,8 @@ public class ErrorModelSubclauseImpl extends AnnexSubclauseImpl implements Error
         return paths != null && !paths.isEmpty();
       case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__PROPERTIES:
         return properties != null && !properties.isEmpty();
+      case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE__TARGET:
+        return target != null;
     }
     return super.eIsSet(featureID);
   }
