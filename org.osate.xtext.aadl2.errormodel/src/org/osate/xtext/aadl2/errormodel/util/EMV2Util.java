@@ -185,6 +185,14 @@ public class EMV2Util {
 		return emsc.getTarget();
 	}
 
+	public static ComponentImplementation getAssociatedComponentImplementation(Element emv2Element) {
+		ComponentClassifier res = getAssociatedClassifier(emv2Element);
+		if (res instanceof ComponentImplementation) {
+			return (ComponentImplementation) res;
+		}
+		return null;
+	}
+
 	/**
 	 * get the separately stored EMV2 subclause, which is assumed to have the name of the classifier
 	 * @param cl Component Classifier

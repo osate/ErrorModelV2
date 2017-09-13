@@ -64,7 +64,6 @@ import static extension org.osate.aadl2.modelsupport.util.AadlUtil.getBaseProper
 import static extension org.osate.xtext.aadl2.errormodel.util.EMV2Util.*
 import static extension org.osate.xtext.aadl2.errormodel.util.ErrorModelUtil.getAllErrorTypes
 import static extension org.osate.xtext.aadl2.errormodel.util.ErrorModelUtil.getAllTypesets
-import org.osate.aadl2.Aadl2Package
 
 /**
  * This class contains custom scoping description.
@@ -123,7 +122,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 	//TODO This method is incomplete. Need to consider all possibilities for reference value
 	def scope_ContainmentPathElement_namedElement(ContainmentPathElement context, EReference reference) {
 		switch parent : context.eContainer {
-			EMV2Path: parent.getContainerOfType(ComponentImplementation)?.allSubcomponents?.filterRefined?.scopeFor ?: IScope.NULLSCOPE
+			EMV2Path: parent.containingErrorModelSubclause.associatedComponentImplementation?.allSubcomponents?.filterRefined?.scopeFor ?: IScope.NULLSCOPE
 			ContainmentPathElement: switch previous : parent.namedElement {
 				Subcomponent case !previous.eIsProxy: switch classifier : previous.allClassifier {
 					ComponentImplementation: classifier.allSubcomponents.filterRefined.scopeFor
@@ -132,7 +131,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 				default: IScope.NULLSCOPE
 			}
 			ReferenceValue: {
-				val subcomponents = parent.getContainerOfType(ComponentImplementation)?.allSubcomponents?.filterRefined ?: emptyList
+				val subcomponents = parent.containingErrorModelSubclause.associatedComponentImplementation?.allSubcomponents?.filterRefined ?: emptyList
 				val types = parent.getContainerOfType(ErrorModelSubclause)?.useTypes?.map[types]?.flatten ?: emptyList;
 				(subcomponents + types).scopeFor
 			}
@@ -289,8 +288,8 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 							val events = parentOfTransition.allContainingClassifierEMV2Subclauses.map[
 								events + (useBehavior?.events ?: emptyList)
 							].flatten
-							val featureGroups = parentOfTransition.getContainerOfType(Classifier).allFeatures.filter(FeatureGroup)
-							val List<Subcomponent> subcomponents = parentOfTransition.getContainerOfType(ComponentImplementation)?.allSubcomponents ?: emptyList
+							val featureGroups = parentOfTransition.associatedClassifier.allFeatures.filter(FeatureGroup)
+							val List<Subcomponent> subcomponents = parentOfTransition.containingErrorModelSubclause.associatedComponentImplementation?.allSubcomponents ?: emptyList
 							val propagations = parentOfTransition.allContainingClassifierEMV2Subclauses.map[propagations].flatten.filter[
 								featureorPPRef !== null && featureorPPRef.next === null && featureorPPRef.featureorPP.name !== null
 							]
@@ -307,8 +306,8 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 						val events = parentOfCondition.allContainingClassifierEMV2Subclauses.map[
 							events + (useBehavior?.events ?: emptyList)
 						].flatten
-						val featureGroups = parentOfCondition.getContainerOfType(Classifier).allFeatures.filter(FeatureGroup)
-						val List<Subcomponent> subcomponents = parentOfCondition.getContainerOfType(ComponentImplementation)?.allSubcomponents ?: emptyList
+						val featureGroups = parentOfCondition.containingErrorModelSubclause.associatedClassifier.allFeatures.filter(FeatureGroup)
+						val List<Subcomponent> subcomponents = parentOfCondition.containingErrorModelSubclause.associatedComponentImplementation?.allSubcomponents ?: emptyList
 						val propagations = parentOfCondition.allContainingClassifierEMV2Subclauses.map[propagations].flatten.filter[
 							featureorPPRef !== null && featureorPPRef.next === null && featureorPPRef.featureorPP.name !== null
 						]
@@ -324,8 +323,8 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 						val events = parentOfCondition.allContainingClassifierEMV2Subclauses.map[
 							events + (useBehavior?.events ?: emptyList)
 						].flatten
-						val featureGroups = parentOfCondition.getContainerOfType(Classifier).allFeatures.filter(FeatureGroup)
-						val List<Subcomponent> subcomponents = parentOfCondition.getContainerOfType(ComponentImplementation)?.allSubcomponents ?: emptyList
+						val featureGroups = parentOfCondition.containingErrorModelSubclause.associatedClassifier.allFeatures.filter(FeatureGroup)
+						val List<Subcomponent> subcomponents = parentOfCondition.containingErrorModelSubclause.associatedComponentImplementation?.allSubcomponents ?: emptyList
 						val propagations = parentOfCondition.allContainingClassifierEMV2Subclauses.map[propagations].flatten.filter[
 							featureorPPRef !== null && featureorPPRef.next === null && featureorPPRef.featureorPP.name !== null
 						]
@@ -340,7 +339,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 			 * 		QualifiedErrorPropagation -> EMV2ErrorPropagationPath
 			 */
 			QualifiedErrorPropagation: {
-				val featureGroups = parent.getContainerOfType(Classifier).allFeatures.filter(FeatureGroup)
+				val featureGroups = parent.containingErrorModelSubclause.associatedClassifier.allFeatures.filter(FeatureGroup)
 				val propagations = parent.allContainingClassifierEMV2Subclauses.map[propagations].flatten.filter[
 					featureorPPRef !== null && featureorPPRef.next === null && featureorPPRef.featureorPP.name !== null
 				]
@@ -368,7 +367,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 					 * No containment path in applies to. Example: "property => value applies to name1"
 					 */
 					ErrorModelSubclause case parent.containmentPath === null: {
-						val featureGroups = parentOfAssociation.getContainerOfType(Classifier).allFeatures.filter(FeatureGroup)
+						val featureGroups = parentOfAssociation.containingErrorModelSubclause.associatedClassifier.allFeatures.filter(FeatureGroup)
 						val subclauseElements = parentOfAssociation.allContainingClassifierEMV2Subclauses.map[
 							val behaviorElements = if (useBehavior !== null) {
 								useBehavior.events + useBehavior.states + useBehavior.transitions
@@ -562,7 +561,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 	def scope_FeatureorPPReference_featureorPP(FeatureorPPReference context, EReference reference) {
 		switch parent : context.eContainer {
 			ErrorPropagation: {
-				var classifier = parent.getContainerOfType(Classifier)
+				var classifier = parent.containingErrorModelSubclause.associatedClassifier
 				if (classifier === null) classifier = parent.containingErrorModelSubclause.getTarget()
 				(classifier.getAllFeatures + classifier.allPropagationPoints + if (classifier instanceof ComponentImplementation) {
 					classifier.allInternalFeatures
@@ -669,7 +668,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 				ComponentImplementation: subcomponentClassifier.allSubcomponents.scopeFor
 				default: IScope.NULLSCOPE
 			}
-			default: parent.getContainerOfType(ComponentImplementation)?.allSubcomponents?.scopeFor ?: IScope.NULLSCOPE
+			default: parent.containingErrorModelSubclause.associatedComponentImplementation?.allSubcomponents?.scopeFor ?: IScope.NULLSCOPE
 		}
 	}
 	
@@ -679,7 +678,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 				ComponentImplementation: subcomponentClassifier.allSubcomponents.scopeFor
 				default: IScope.NULLSCOPE
 			}
-			default: parent.getContainerOfType(ComponentImplementation)?.allSubcomponents?.scopeFor ?: IScope.NULLSCOPE
+			default: parent.containingErrorModelSubclause.associatedComponentImplementation?.allSubcomponents?.scopeFor ?: IScope.NULLSCOPE
 		}
 	}
 
@@ -786,17 +785,6 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 			}
 
 		propagationsDescriptions + nextSubcomponentLevel
-	}
-	
-		
-	def IScope scope_ComponentClassifier(EObject context, EReference reference) {
-		return delegateGetScope(context, reference)
-	}
-		
-	def IScope scope_EMV2PropertyAssociation_property(EObject context, EReference reference) {
-		val res = delegateGetScope(context, reference)
-		val elems = res.allElements
-		return res
 	}
 	
 }
