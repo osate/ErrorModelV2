@@ -65,6 +65,7 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
     switch (eClass.getClassifierID())
     {
       case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE: return createErrorModelSubclause();
+      case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE_REFERENCE_DUMMY: return createErrorModelSubclauseReferenceDummy();
       case ErrorModelPackage.ERROR_MODEL_LIBRARY: return createErrorModelLibrary();
       case ErrorModelPackage.EMV2_PROPERTY_ASSOCIATION: return createEMV2PropertyAssociation();
       case ErrorModelPackage.EMV2_PATH: return createEMV2Path();
@@ -129,6 +130,17 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
   {
     ErrorModelSubclauseImpl errorModelSubclause = new ErrorModelSubclauseImpl();
     return errorModelSubclause;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ErrorModelSubclauseReferenceDummy createErrorModelSubclauseReferenceDummy()
+  {
+    ErrorModelSubclauseReferenceDummyImpl errorModelSubclauseReferenceDummy = new ErrorModelSubclauseReferenceDummyImpl();
+    return errorModelSubclauseReferenceDummy;
   }
 
   /**

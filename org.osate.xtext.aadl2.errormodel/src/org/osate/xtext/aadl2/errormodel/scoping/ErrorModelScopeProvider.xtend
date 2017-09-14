@@ -561,8 +561,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 	def scope_FeatureorPPReference_featureorPP(FeatureorPPReference context, EReference reference) {
 		switch parent : context.eContainer {
 			ErrorPropagation: {
-				var classifier = parent.containingErrorModelSubclause.associatedClassifier
-				if (classifier === null) classifier = parent.containingErrorModelSubclause.getTarget()
+				var classifier = parent.containingErrorModelSubclause.associatedClassifier;
 				(classifier.getAllFeatures + classifier.allPropagationPoints + if (classifier instanceof ComponentImplementation) {
 					classifier.allInternalFeatures
 				} else {

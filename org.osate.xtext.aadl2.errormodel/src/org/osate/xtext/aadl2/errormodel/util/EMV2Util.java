@@ -56,7 +56,6 @@ import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorTransition;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorDetection;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorFlow;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelLibrary;
-import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelPackage;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelSubclause;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorPath;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorPropagation;
@@ -80,7 +79,6 @@ import org.osate.xtext.aadl2.errormodel.errorModel.TypeToken;
 import org.osate.xtext.aadl2.errormodel.errorModel.TypeTransformationSet;
 import org.osate.xtext.aadl2.errormodel.errorModel.impl.AndExpressionImpl;
 import org.osate.xtext.aadl2.errormodel.errorModel.impl.OrExpressionImpl;
-import org.osate.xtext.aadl2.properties.util.EMFIndexRetrieval;
 
 public class EMV2Util {
 
@@ -179,10 +177,10 @@ public class EMV2Util {
 			return cl;
 		}
 		ErrorModelSubclause emsc = getContainingErrorModelSubclause(emv2Element);
-		if (emsc == null || emsc.getName().equalsIgnoreCase("EMV2")) {
+		if (emsc == null || emsc.getName().equalsIgnoreCase(ErrorModelAnnexName)) {
 			return null;
 		}
-		return emsc.getTarget();
+		return ScopeUtil.eInstance.lookupClassifier(emsc.eResource(), emsc.getName());
 	}
 
 	public static ComponentImplementation getAssociatedComponentImplementation(Element emv2Element) {
@@ -199,8 +197,8 @@ public class EMV2Util {
 	 * @return ErrorModelSubclause
 	 */
 	public static ErrorModelSubclause getAssociatedEMV2Subclause(ComponentClassifier cl) {
-		return (ErrorModelSubclause) EMFIndexRetrieval.getEObjectOfType(cl,
-				ErrorModelPackage.eINSTANCE.getErrorModelSubclause(), cl.getQualifiedName());
+		ErrorModelSubclause res = ScopeUtil.eInstance.lookupErrorModelSubclause(cl.eResource(), cl.getQualifiedName());
+		return res;
 	}
 
 	/**
@@ -214,13 +212,13 @@ public class EMV2Util {
 		if (cl == null) {
 			return null;
 		}
-		// separately stored EMV2 subclause
-		ErrorModelSubclause emsc = getAssociatedEMV2Subclause(cl);
+		// embedded EMV2 subclause
+		ErrorModelSubclause emsc = getEmbeddedEMV2Subclause(cl);
 		if (emsc != null) {
 			return emsc;
 		}
-		// embedded EMV2 subclause
-		return getEmbeddedEMV2Subclause(cl);
+		// separately stored EMV2 subclause
+		return getAssociatedEMV2Subclause(cl);
 	}
 
 	public static ErrorModelSubclause getEmbeddedEMV2Subclause(ComponentClassifier cl) {

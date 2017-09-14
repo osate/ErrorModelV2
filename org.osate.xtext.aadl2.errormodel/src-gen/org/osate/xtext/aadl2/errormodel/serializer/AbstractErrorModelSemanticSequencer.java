@@ -51,6 +51,7 @@ import org.osate.xtext.aadl2.errormodel.errorModel.ErrorEvent;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelLibrary;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelPackage;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelSubclause;
+import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelSubclauseReferenceDummy;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorPath;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorPropagation;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorSink;
@@ -327,6 +328,9 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 					return; 
 				}
 				else break;
+			case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE_REFERENCE_DUMMY:
+				sequence_ErrorModelSubclauseReferenceDummy(context, (ErrorModelSubclauseReferenceDummy) semanticObject); 
+				return; 
 			case ErrorModelPackage.ERROR_PATH:
 				sequence_ErrorPath(context, (ErrorPath) semanticObject); 
 				return; 
@@ -767,7 +771,6 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 	 * Constraint:
 	 *     (
 	 *         name=QCREF 
-	 *         target=[ComponentClassifier|QCREF] 
 	 *         (useTypes+=[ErrorModelLibrary|QEMREF] useTypes+=[ErrorModelLibrary|QEMREF]*)? 
 	 *         typeEquivalence=[TypeMappingSet|QEMREF]? 
 	 *         typeMappingSet=[TypeMappingSet|QEMREF]? 
@@ -915,6 +918,24 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 	 */
 	protected void sequence_ErrorModelLibrary(ISerializationContext context, ErrorModelLibrary semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ErrorModelSubclauseReferenceDummy returns ErrorModelSubclauseReferenceDummy
+	 *
+	 * Constraint:
+	 *     xref=[ErrorModelSubclause|QCREF]
+	 */
+	protected void sequence_ErrorModelSubclauseReferenceDummy(ISerializationContext context, ErrorModelSubclauseReferenceDummy semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, ErrorModelPackage.Literals.ERROR_MODEL_SUBCLAUSE_REFERENCE_DUMMY__XREF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, ErrorModelPackage.Literals.ERROR_MODEL_SUBCLAUSE_REFERENCE_DUMMY__XREF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getErrorModelSubclauseReferenceDummyAccess().getXrefErrorModelSubclauseQCREFParserRuleCall_0_1(), semanticObject.eGet(ErrorModelPackage.Literals.ERROR_MODEL_SUBCLAUSE_REFERENCE_DUMMY__XREF, false));
+		feeder.finish();
 	}
 	
 	

@@ -89,6 +89,13 @@ public class ErrorModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE_REFERENCE_DUMMY:
+      {
+        ErrorModelSubclauseReferenceDummy errorModelSubclauseReferenceDummy = (ErrorModelSubclauseReferenceDummy)theEObject;
+        T result = caseErrorModelSubclauseReferenceDummy(errorModelSubclauseReferenceDummy);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ErrorModelPackage.ERROR_MODEL_LIBRARY:
       {
         ErrorModelLibrary errorModelLibrary = (ErrorModelLibrary)theEObject;
@@ -555,6 +562,22 @@ public class ErrorModelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseErrorModelSubclause(ErrorModelSubclause object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Subclause Reference Dummy</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Subclause Reference Dummy</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseErrorModelSubclauseReferenceDummy(ErrorModelSubclauseReferenceDummy object)
   {
     return null;
   }

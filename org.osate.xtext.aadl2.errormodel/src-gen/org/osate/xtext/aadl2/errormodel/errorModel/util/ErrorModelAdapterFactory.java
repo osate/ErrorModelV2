@@ -86,6 +86,11 @@ public class ErrorModelAdapterFactory extends AdapterFactoryImpl
         return createErrorModelSubclauseAdapter();
       }
       @Override
+      public Adapter caseErrorModelSubclauseReferenceDummy(ErrorModelSubclauseReferenceDummy object)
+      {
+        return createErrorModelSubclauseReferenceDummyAdapter();
+      }
+      @Override
       public Adapter caseErrorModelLibrary(ErrorModelLibrary object)
       {
         return createErrorModelLibraryAdapter();
@@ -393,6 +398,21 @@ public class ErrorModelAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createErrorModelSubclauseAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelSubclauseReferenceDummy <em>Subclause Reference Dummy</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelSubclauseReferenceDummy
+   * @generated
+   */
+  public Adapter createErrorModelSubclauseReferenceDummyAdapter()
   {
     return null;
   }

@@ -32,6 +32,15 @@ public interface ErrorModelFactory extends EFactory
   ErrorModelSubclause createErrorModelSubclause();
 
   /**
+   * Returns a new object of class '<em>Subclause Reference Dummy</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Subclause Reference Dummy</em>'.
+   * @generated
+   */
+  ErrorModelSubclauseReferenceDummy createErrorModelSubclauseReferenceDummy();
+
+  /**
    * Returns a new object of class '<em>Library</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

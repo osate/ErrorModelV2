@@ -34,7 +34,9 @@
         eType="#//PropagationPath" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//EMV2PropertyAssociation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//ComponentClassifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ErrorModelSubclauseReferenceDummy">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xref" eType="#//ErrorModelSubclause"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ErrorModelLibrary" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//AnnexLibrary">
     <eStructuralFeatures xsi:type="ecore:EReference" name="useTypes" unique="false"
