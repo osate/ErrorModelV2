@@ -29,6 +29,15 @@
       </aadlcontribution>
    </extension>
 
+      <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.osate.internal.ui.preferences.OsatePreferencePage"
+            class="org.osate.xtext.aadl2.errormodel.preferences.Page"
+            id="org.osate.experimental.emv2.PreferencePage"
+            name="Experimental EMV2 Features">
+      </page>
+   </extension>
 
 
 </plugin>

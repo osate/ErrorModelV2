@@ -79,6 +79,7 @@ import org.osate.xtext.aadl2.errormodel.errorModel.TypeToken;
 import org.osate.xtext.aadl2.errormodel.errorModel.TypeTransformationSet;
 import org.osate.xtext.aadl2.errormodel.errorModel.impl.AndExpressionImpl;
 import org.osate.xtext.aadl2.errormodel.errorModel.impl.OrExpressionImpl;
+import org.osate.xtext.aadl2.errormodel.preferences.Values;
 
 public class EMV2Util {
 
@@ -176,6 +177,9 @@ public class EMV2Util {
 		if (cl != null) {
 			return cl;
 		}
+		if (Values.doEmbeddedEMV2Only()) {
+			return null;
+		}
 		ErrorModelSubclause emsc = getContainingErrorModelSubclause(emv2Element);
 		if (emsc == null || emsc.getName().equalsIgnoreCase(ErrorModelAnnexName)) {
 			return null;
@@ -203,7 +207,6 @@ public class EMV2Util {
 
 	/**
 	 * get the error model subclause for the specified classifier.
-	 * Do it for the separately stored first, if not found then embedded subclause
 	 * Does not look in the extends hierarchy
 	 * @param cl CLassifier
 	 * @return
@@ -217,8 +220,12 @@ public class EMV2Util {
 		if (emsc != null) {
 			return emsc;
 		}
+		if (Values.doEmbeddedEMV2Only()) {
+			return null;
+		}
 		// separately stored EMV2 subclause
-		return getAssociatedEMV2Subclause(cl);
+		ErrorModelSubclause res = ScopeUtil.eInstance.lookupErrorModelSubclause(cl.eResource(), cl.getQualifiedName());
+		return res;
 	}
 
 	public static ErrorModelSubclause getEmbeddedEMV2Subclause(ComponentClassifier cl) {
