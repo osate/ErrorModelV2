@@ -51,8 +51,9 @@ public class ErrorModelQualifiedNameProvider extends DefaultDeclarativeQualified
 				return namedElement.getName();
 			}
 			ErrorModelLibrary eml = ((EMV2Root) root).getLibrary();
-			if (eml != null)
-				return root.getName() + "::" + namedElement.getName();
+			if (eml != null) {
+				return eml.getName() + "::" + namedElement.getName();
+			}
 		}
 		if (namedElement instanceof ErrorModelLibrary) {
 			return "emv2$" + root.getName();
