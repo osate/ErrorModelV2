@@ -79,6 +79,8 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 			return getEndCompositeKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEndConnectionKeywordsRule())
 			return getEndConnectionKeywordsToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getEndLibraryKeywordsRule())
+			return getEndLibraryKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEndMappingsKeywordsRule())
 			return getEndMappingsKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEndPathsKeywordsRule())
@@ -230,6 +232,17 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 		if (node != null)
 			return getTokenText(node);
 		return "endconnection";
+	}
+	
+	/**
+	 * EndLibraryKeywords:
+	 * 	'end' 'library'
+	 * ;
+	 */
+	protected String getEndLibraryKeywordsToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "endlibrary";
 	}
 	
 	/**
@@ -651,7 +664,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     (ErrorTypesKeywords EndTypesKeywords ';')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=QEMREF (ambiguity) (rule end)
+	 *     name=QEMREF (ambiguity) EndLibraryKeywords ';' (rule end)
 	 *     name=QEMREF (ambiguity) behaviors+=ErrorBehaviorStateMachine
 	 *     name=QEMREF (ambiguity) mappings+=TypeMappingSet
 	 *     name=QEMREF (ambiguity) transformations+=TypeTransformationSet

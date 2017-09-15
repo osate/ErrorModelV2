@@ -194,7 +194,9 @@ EMV2Library returns ErrorModelLibrary:
     (behaviors+=ErrorBehaviorStateMachine )*
 	(mappings+=TypeMappingSet )* 
 	(transformations+=TypeTransformationSet )*
-	) |
+	) 
+	EndLibraryKeywords ';'
+	|
 	(	'package' name=QEMREF 'public'
   'annex' ID  '{**' 
 	(
@@ -716,6 +718,10 @@ EndPropagationsKeywords:
 
 EndSubclauseKeywords:
 	'end' 'subclause'
+;
+
+EndLibraryKeywords:
+	'end' 'library'
 ;
 
 EndTransformationsKeywords:

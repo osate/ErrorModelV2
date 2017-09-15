@@ -1499,6 +1499,8 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cMappingsTypeMappingSetParserRuleCall_0_1_4_0 = (RuleCall)cMappingsAssignment_0_1_4.eContents().get(0);
 		private final Assignment cTransformationsAssignment_0_1_5 = (Assignment)cGroup_0_1.eContents().get(5);
 		private final RuleCall cTransformationsTypeTransformationSetParserRuleCall_0_1_5_0 = (RuleCall)cTransformationsAssignment_0_1_5.eContents().get(0);
+		private final RuleCall cEndLibraryKeywordsParserRuleCall_0_2 = (RuleCall)cGroup_0.eContents().get(2);
+		private final Keyword cSemicolonKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cPackageKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -1563,7 +1565,8 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		//	EndTypesKeywords ';')?
 		//	behaviors+=ErrorBehaviorStateMachine*
 		//	mappings+=TypeMappingSet*
-		//	transformations+=TypeTransformationSet*) | 'package' name=QEMREF 'public'
+		//	transformations+=TypeTransformationSet*) EndLibraryKeywords ';'
+		//	| 'package' name=QEMREF 'public'
 		//	'annex' ID '{**' (ErrorTypesKeywords (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
 		//	useTypes+=[ErrorModelLibrary|QEMREF])* ';')? ('extends' extends+=[ErrorModelLibrary|QEMREF] (','
 		//	extends+=[ErrorModelLibrary|QEMREF])*
@@ -1580,19 +1583,19 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		//(',' useTypes+=[ErrorModelLibrary|QEMREF])* ';')? ('extends' extends+=[ErrorModelLibrary|QEMREF] (','
 		//extends+=[ErrorModelLibrary|QEMREF])* 'with')? (types+=TypeDefinition | typesets+=TypeSetDefinition)* ('properties'
 		//properties+=BasicEMV2PropertyAssociation+)? EndTypesKeywords ';')? behaviors+=ErrorBehaviorStateMachine*
-		//mappings+=TypeMappingSet* transformations+=TypeTransformationSet*) | 'package' name=QEMREF 'public' 'annex' ID '{**'
-		//(ErrorTypesKeywords (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (',' useTypes+=[ErrorModelLibrary|QEMREF])*
-		//';')? ('extends' extends+=[ErrorModelLibrary|QEMREF] (',' extends+=[ErrorModelLibrary|QEMREF])* 'with')?
-		//(types+=TypeDefinition | typesets+=TypeSetDefinition)* ('properties' properties+=BasicEMV2PropertyAssociation+)?
-		//EndTypesKeywords ';')? behaviors+=ErrorBehaviorStateMachine* mappings+=TypeMappingSet*
-		//transformations+=TypeTransformationSet* '**}' ';' 'end' QEMREF ';'
+		//mappings+=TypeMappingSet* transformations+=TypeTransformationSet*) EndLibraryKeywords ';' | 'package' name=QEMREF
+		//'public' 'annex' ID '{**' (ErrorTypesKeywords (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
+		//useTypes+=[ErrorModelLibrary|QEMREF])* ';')? ('extends' extends+=[ErrorModelLibrary|QEMREF] (','
+		//extends+=[ErrorModelLibrary|QEMREF])* 'with')? (types+=TypeDefinition | typesets+=TypeSetDefinition)* ('properties'
+		//properties+=BasicEMV2PropertyAssociation+)? EndTypesKeywords ';')? behaviors+=ErrorBehaviorStateMachine*
+		//mappings+=TypeMappingSet* transformations+=TypeTransformationSet* '**}' ';' 'end' QEMREF ';'
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{ErrorModelLibrary} ('library' name=QEMREF (ErrorTypesKeywords (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF]
 		//(',' useTypes+=[ErrorModelLibrary|QEMREF])* ';')? ('extends' extends+=[ErrorModelLibrary|QEMREF] (','
 		//extends+=[ErrorModelLibrary|QEMREF])* 'with')? (types+=TypeDefinition | typesets+=TypeSetDefinition)* ('properties'
 		//properties+=BasicEMV2PropertyAssociation+)? EndTypesKeywords ';')? behaviors+=ErrorBehaviorStateMachine*
-		//mappings+=TypeMappingSet* transformations+=TypeTransformationSet*)
+		//mappings+=TypeMappingSet* transformations+=TypeTransformationSet*) EndLibraryKeywords ';'
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{ErrorModelLibrary}
@@ -1739,6 +1742,12 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 
 		//TypeTransformationSet
 		public RuleCall getTransformationsTypeTransformationSetParserRuleCall_0_1_5_0() { return cTransformationsTypeTransformationSetParserRuleCall_0_1_5_0; }
+
+		//EndLibraryKeywords
+		public RuleCall getEndLibraryKeywordsParserRuleCall_0_2() { return cEndLibraryKeywordsParserRuleCall_0_2; }
+
+		//';'
+		public Keyword getSemicolonKeyword_0_3() { return cSemicolonKeyword_0_3; }
 
 		//'package' name=QEMREF 'public' 'annex' ID '{**' (ErrorTypesKeywords (UseTypesKeywords
 		//useTypes+=[ErrorModelLibrary|QEMREF] (',' useTypes+=[ErrorModelLibrary|QEMREF])* ';')? ('extends'
@@ -6190,6 +6199,26 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSubclauseKeyword_1() { return cSubclauseKeyword_1; }
 	}
 
+	public class EndLibraryKeywordsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.osate.xtext.aadl2.errormodel.ErrorModel.EndLibraryKeywords");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEndKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLibraryKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		
+		//EndLibraryKeywords:
+		//	'end' 'library';
+		@Override public ParserRule getRule() { return rule; }
+
+		//'end' 'library'
+		public Group getGroup() { return cGroup; }
+
+		//'end'
+		public Keyword getEndKeyword_0() { return cEndKeyword_0; }
+
+		//'library'
+		public Keyword getLibraryKeyword_1() { return cLibraryKeyword_1; }
+	}
+
 	public class EndTransformationsKeywordsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.osate.xtext.aadl2.errormodel.ErrorModel.EndTransformationsKeywords");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -6775,6 +6804,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 	private final EndPathsKeywordsElements pEndPathsKeywords;
 	private final EndPropagationsKeywordsElements pEndPropagationsKeywords;
 	private final EndSubclauseKeywordsElements pEndSubclauseKeywords;
+	private final EndLibraryKeywordsElements pEndLibraryKeywords;
 	private final EndTransformationsKeywordsElements pEndTransformationsKeywords;
 	private final EndTypesKeywordsElements pEndTypesKeywords;
 	private final ErrorBehaviorKeywordsElements pErrorBehaviorKeywords;
@@ -6903,6 +6933,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEndPathsKeywords = new EndPathsKeywordsElements();
 		this.pEndPropagationsKeywords = new EndPropagationsKeywordsElements();
 		this.pEndSubclauseKeywords = new EndSubclauseKeywordsElements();
+		this.pEndLibraryKeywords = new EndLibraryKeywordsElements();
 		this.pEndTransformationsKeywords = new EndTransformationsKeywordsElements();
 		this.pEndTypesKeywords = new EndTypesKeywordsElements();
 		this.pErrorBehaviorKeywords = new ErrorBehaviorKeywordsElements();
@@ -7142,7 +7173,8 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 	//	EndTypesKeywords ';')?
 	//	behaviors+=ErrorBehaviorStateMachine*
 	//	mappings+=TypeMappingSet*
-	//	transformations+=TypeTransformationSet*) | 'package' name=QEMREF 'public'
+	//	transformations+=TypeTransformationSet*) EndLibraryKeywords ';'
+	//	| 'package' name=QEMREF 'public'
 	//	'annex' ID '{**' (ErrorTypesKeywords (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
 	//	useTypes+=[ErrorModelLibrary|QEMREF])* ';')? ('extends' extends+=[ErrorModelLibrary|QEMREF] (','
 	//	extends+=[ErrorModelLibrary|QEMREF])*
@@ -8082,6 +8114,16 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEndSubclauseKeywordsRule() {
 		return getEndSubclauseKeywordsAccess().getRule();
+	}
+
+	//EndLibraryKeywords:
+	//	'end' 'library';
+	public EndLibraryKeywordsElements getEndLibraryKeywordsAccess() {
+		return pEndLibraryKeywords;
+	}
+	
+	public ParserRule getEndLibraryKeywordsRule() {
+		return getEndLibraryKeywordsAccess().getRule();
 	}
 
 	//EndTransformationsKeywords:

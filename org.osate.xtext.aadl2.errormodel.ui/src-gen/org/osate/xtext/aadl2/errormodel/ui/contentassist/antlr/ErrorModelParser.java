@@ -299,6 +299,7 @@ public class ErrorModelParser extends AbstractPartialContentAssistParser {
 					put(grammarAccess.getEndPathsKeywordsAccess().getGroup(), "rule__EndPathsKeywords__Group__0");
 					put(grammarAccess.getEndPropagationsKeywordsAccess().getGroup(), "rule__EndPropagationsKeywords__Group__0");
 					put(grammarAccess.getEndSubclauseKeywordsAccess().getGroup(), "rule__EndSubclauseKeywords__Group__0");
+					put(grammarAccess.getEndLibraryKeywordsAccess().getGroup(), "rule__EndLibraryKeywords__Group__0");
 					put(grammarAccess.getEndTransformationsKeywordsAccess().getGroup(), "rule__EndTransformationsKeywords__Group__0");
 					put(grammarAccess.getEndTypesKeywordsAccess().getGroup(), "rule__EndTypesKeywords__Group__0");
 					put(grammarAccess.getErrorBehaviorKeywordsAccess().getGroup(), "rule__ErrorBehaviorKeywords__Group__0");
