@@ -692,7 +692,7 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 	 *     EMV2Package returns EMV2Package
 	 *
 	 * Constraint:
-	 *     (name=QCREF subclauses+=EMV2Subclause*)
+	 *     (name=QPREF subclauses+=EMV2Subclause*)
 	 */
 	protected void sequence_EMV2Package(ISerializationContext context, EMV2Package semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -761,7 +761,7 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (useTypes+=[ErrorModelLibrary|QEMREF] useTypes+=[ErrorModelLibrary|QEMREF]*)? 
 	 *         typeEquivalence=[TypeMappingSet|QEMREF]? 
 	 *         typeMappingSet=[TypeMappingSet|QEMREF]? 

@@ -128,15 +128,14 @@ class ErrorTypesTestSeparateSubclause extends OsateTest {
 				end a2.i;
 			end subclause1;
 		''', subclause1FileName -> '''
-			package subclause1
-				subclause a1
+			package subclause1 
+				subclause a1 
 					use behavior lib6::bvr1;
 				end ;
 				
 				subclause a2.i
 					use types lib2, lib5, lib6;
 					use behavior lib6::bvr1;
-					
 					error propagations
 						processor: in propagation {t1};
 					flows
@@ -150,7 +149,7 @@ class ErrorTypesTestSeparateSubclause extends OsateTest {
 					events
 						errEvent1: error event {t1};
 					transitions
-						errBvrTransition1: bvr_state1 {t1} -[ errEvent1 {t1} ]-> bvr_state2 {t2};
+						errBvrTransition1: bvr_state1 {t1} -[ errEvent1 {t1} ]-> bvr_state2 {t2}; 
 						errBvrTransition2: bvr_state1 -[ errEvent1 ]-> (bvr_state2 {t2} with 0.2, bvr_state2 {t2} with 0.8);
 					propagations
 						propCondition1: bvr_state1 {t1} -[ processor {t1} ]-> all {t1};
@@ -463,7 +462,7 @@ class ErrorTypesTestSeparateSubclause extends OsateTest {
 			]
 		subclause1TestResult.resource.contents.head as EMV2Package => [
 			"subclause1".assertEquals(name)
-			subclauses.get(2) as ErrorModelSubclause => [
+			subclauses.get(1) as ErrorModelSubclause => [
 				"a2.i".assertEquals(name)
 					val expectedScope = #["t1", "t2", "t3", "t4", "t6", "ts1", "ts2", "ts3", "ts4", "ts6",
 						"lib1::conflict1", "lib1::conflict2", "lib1::conflict_ts1", "lib1::conflict_ts2", "lib1::t1",

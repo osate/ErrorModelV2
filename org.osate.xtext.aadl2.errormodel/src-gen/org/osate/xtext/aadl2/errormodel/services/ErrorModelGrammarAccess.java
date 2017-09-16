@@ -272,26 +272,26 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameQCREFParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameQPREFParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cSubclausesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cSubclausesEMV2SubclauseParserRuleCall_2_0 = (RuleCall)cSubclausesAssignment_2.eContents().get(0);
 		
 		//EMV2Package:
-		//	'package' name=QCREF
+		//	'package' name=QPREF
 		//	subclauses+=EMV2Subclause*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//'package' name=QCREF subclauses+=EMV2Subclause*
+		//'package' name=QPREF subclauses+=EMV2Subclause*
 		public Group getGroup() { return cGroup; }
 
 		//'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 
-		//name=QCREF
+		//name=QPREF
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//QCREF
-		public RuleCall getNameQCREFParserRuleCall_1_0() { return cNameQCREFParserRuleCall_1_0; }
+		//QPREF
+		public RuleCall getNameQPREFParserRuleCall_1_0() { return cNameQPREFParserRuleCall_1_0; }
 
 		//subclauses+=EMV2Subclause*
 		public Assignment getSubclausesAssignment_2() { return cSubclausesAssignment_2; }
@@ -406,7 +406,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cPropertiesAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
 		private final RuleCall cPropertiesEMV2PropertyAssociationParserRuleCall_10_1_0 = (RuleCall)cPropertiesAssignment_10_1.eContents().get(0);
 		
-		//ErrorModelSubclause:
+		//ErrorModelSubclause aadl2::AnnexSubclause:
 		//	{ErrorModelSubclause} (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
 		//	useTypes+=[ErrorModelLibrary|QEMREF])* ';')? (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF]
 		//	';')? (UseMappingsKeywords typeMappingSet=[TypeMappingSet|QEMREF] ';')? (UseBehaviorKeywords
@@ -769,7 +769,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cErrorModelSubclauseAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cSubclauseKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameQCREFParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final RuleCall cNameIREFParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final RuleCall cUseTypesKeywordsParserRuleCall_3_0 = (RuleCall)cGroup_3.eContents().get(0);
 		private final Assignment cUseTypesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
@@ -874,7 +874,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEndSubclauseKeywordsParserRuleCall_13 = (RuleCall)cGroup.eContents().get(13);
 		
 		//EMV2Subclause ErrorModelSubclause:
-		//	{ErrorModelSubclause} 'subclause' name=QCREF (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
+		//	{ErrorModelSubclause} 'subclause' name=IREF (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
 		//	useTypes+=[ErrorModelLibrary|QEMREF])* ';')? (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF]
 		//	';')? (UseMappingsKeywords typeMappingSet=[TypeMappingSet|QEMREF] ';')? (UseBehaviorKeywords
 		//	useBehavior=[ErrorBehaviorStateMachine|QEMREF]
@@ -902,7 +902,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		//	EndSubclauseKeywords;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{ErrorModelSubclause} 'subclause' name=QCREF (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
+		//{ErrorModelSubclause} 'subclause' name=IREF (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
 		//useTypes+=[ErrorModelLibrary|QEMREF])* ';')? (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF] ';')?
 		//(UseMappingsKeywords typeMappingSet=[TypeMappingSet|QEMREF] ';')? (UseBehaviorKeywords
 		//useBehavior=[ErrorBehaviorStateMachine|QEMREF] //   	('(' stateTypeBindings+=StateTypeBinding (',' stateTypeBindings+=StateTypeBinding)*')')?
@@ -925,11 +925,11 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		//'subclause'
 		public Keyword getSubclauseKeyword_1() { return cSubclauseKeyword_1; }
 
-		//name=QCREF
+		//name=IREF
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
-		//QCREF
-		public RuleCall getNameQCREFParserRuleCall_2_0() { return cNameQCREFParserRuleCall_2_0; }
+		//IREF
+		public RuleCall getNameIREFParserRuleCall_2_0() { return cNameIREFParserRuleCall_2_0; }
 
 		//(UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (',' useTypes+=[ErrorModelLibrary|QEMREF])* ';')?
 		public Group getGroup_3() { return cGroup_3; }
@@ -6447,6 +6447,35 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
 	}
+
+	public class IREFElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.osate.xtext.aadl2.errormodel.ErrorModel.IREF");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final RuleCall cIDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		////('.' ID )?;
+		//IREF:
+		//	ID ('.' ID)?;
+		@Override public ParserRule getRule() { return rule; }
+
+		//ID ('.' ID)?
+		public Group getGroup() { return cGroup; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+
+		//('.' ID)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//'.'
+		public Keyword getFullStopKeyword_1_0() { return cFullStopKeyword_1_0; }
+
+		//ID
+		public RuleCall getIDTerminalRuleCall_1_1() { return cIDTerminalRuleCall_1_1; }
+	}
 	
 	
 	private final EMV2RootElements pEMV2Root;
@@ -6568,6 +6597,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tSL_COMMENT;
 	private final TerminalRule tINTEGER_LIT;
 	private final QEMREFElements pQEMREF;
+	private final IREFElements pIREF;
 	
 	private final Grammar grammar;
 
@@ -6697,6 +6727,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.osate.xtext.aadl2.errormodel.ErrorModel.SL_COMMENT");
 		this.tINTEGER_LIT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.osate.xtext.aadl2.errormodel.ErrorModel.INTEGER_LIT");
 		this.pQEMREF = new QEMREFElements();
+		this.pIREF = new IREFElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -6802,7 +6833,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EMV2Package:
-	//	'package' name=QCREF
+	//	'package' name=QPREF
 	//	subclauses+=EMV2Subclause*;
 	public EMV2PackageElements getEMV2PackageAccess() {
 		return pEMV2Package;
@@ -6812,7 +6843,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 		return getEMV2PackageAccess().getRule();
 	}
 
-	//ErrorModelSubclause:
+	//ErrorModelSubclause aadl2::AnnexSubclause:
 	//	{ErrorModelSubclause} (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
 	//	useTypes+=[ErrorModelLibrary|QEMREF])* ';')? (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF]
 	//	';')? (UseMappingsKeywords typeMappingSet=[TypeMappingSet|QEMREF] ';')? (UseBehaviorKeywords
@@ -6848,7 +6879,7 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//EMV2Subclause ErrorModelSubclause:
-	//	{ErrorModelSubclause} 'subclause' name=QCREF (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
+	//	{ErrorModelSubclause} 'subclause' name=IREF (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (','
 	//	useTypes+=[ErrorModelLibrary|QEMREF])* ';')? (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF]
 	//	';')? (UseMappingsKeywords typeMappingSet=[TypeMappingSet|QEMREF] ';')? (UseBehaviorKeywords
 	//	useBehavior=[ErrorBehaviorStateMachine|QEMREF]
@@ -8103,6 +8134,17 @@ public class ErrorModelGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getQEMREFRule() {
 		return getQEMREFAccess().getRule();
+	}
+
+	////('.' ID )?;
+	//IREF:
+	//	ID ('.' ID)?;
+	public IREFElements getIREFAccess() {
+		return pIREF;
+	}
+	
+	public ParserRule getIREFRule() {
+		return getIREFAccess().getRule();
 	}
 
 	//PModel aadl2::Element:

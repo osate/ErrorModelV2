@@ -51,11 +51,11 @@ TypeSetElement
 ;
 
 EMV2Package returns EMV2Package:
-	'package' name=QCREF
+	'package' name=QPREF
 	subclauses+=EMV2Subclause*
 ;
 
-ErrorModelSubclause returns ErrorModelSubclause:
+ErrorModelSubclause returns aadl2::AnnexSubclause:
      {ErrorModelSubclause}//'{**' 
    (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (',' useTypes+=[ErrorModelLibrary|QEMREF] )* ';')?
    (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF] ';')?
@@ -107,7 +107,7 @@ ErrorModelSubclause returns ErrorModelSubclause:
 
 
 EMV2Subclause returns ErrorModelSubclause:
-     {ErrorModelSubclause} 'subclause' name=QCREF 
+     {ErrorModelSubclause} 'subclause' name=IREF 
      //'{**' 
    (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (',' useTypes+=[ErrorModelLibrary|QEMREF] )* ';')?
    (UseTypeEquivalenceKeywords typeEquivalence=[TypeMappingSet|QEMREF] ';')?
@@ -810,4 +810,5 @@ terminal INTEGER_LIT : ('0'..'9')+;
 QEMREF:
 	 ID ('::' ID)* ;//('.' ID )?;
 
+IREF: ID ('.' ID )?;
 

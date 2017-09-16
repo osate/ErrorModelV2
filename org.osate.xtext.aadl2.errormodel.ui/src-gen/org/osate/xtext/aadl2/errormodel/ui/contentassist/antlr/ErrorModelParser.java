@@ -315,6 +315,8 @@ public class ErrorModelParser extends AbstractPartialContentAssistParser {
 					put(grammarAccess.getUseTypesKeywordsAccess().getGroup(), "rule__UseTypesKeywords__Group__0");
 					put(grammarAccess.getQEMREFAccess().getGroup(), "rule__QEMREF__Group__0");
 					put(grammarAccess.getQEMREFAccess().getGroup_1(), "rule__QEMREF__Group_1__0");
+					put(grammarAccess.getIREFAccess().getGroup(), "rule__IREF__Group__0");
+					put(grammarAccess.getIREFAccess().getGroup_1(), "rule__IREF__Group_1__0");
 					put(grammarAccess.getContainedPropertyAssociationAccess().getGroup(), "rule__ContainedPropertyAssociation__Group__0");
 					put(grammarAccess.getContainedPropertyAssociationAccess().getGroup_3(), "rule__ContainedPropertyAssociation__Group_3__0");
 					put(grammarAccess.getContainedPropertyAssociationAccess().getGroup_3_1(), "rule__ContainedPropertyAssociation__Group_3_1__0");

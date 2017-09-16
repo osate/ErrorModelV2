@@ -129,9 +129,9 @@ ruleEMV2Package returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEMV2PackageAccess().getNameQCREFParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getEMV2PackageAccess().getNameQPREFParserRuleCall_1_0()); 
 	    }
-		lv_name_1_0=ruleQCREF		{
+		lv_name_1_0=ruleQPREF		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEMV2PackageRule());
 	        }
@@ -139,7 +139,7 @@ ruleEMV2Package returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"org.osate.xtext.aadl2.properties.Properties.QCREF");
+        		"org.osate.xtext.aadl2.properties.Properties.QPREF");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -783,9 +783,9 @@ ruleEMV2Subclause returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEMV2SubclauseAccess().getNameQCREFParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getEMV2SubclauseAccess().getNameIREFParserRuleCall_2_0()); 
 	    }
-		lv_name_2_0=ruleQCREF		{
+		lv_name_2_0=ruleIREF		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEMV2SubclauseRule());
 	        }
@@ -793,7 +793,7 @@ ruleEMV2Subclause returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_2_0, 
-        		"org.osate.xtext.aadl2.properties.Properties.QCREF");
+        		"org.osate.xtext.aadl2.errormodel.ErrorModel.IREF");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -9284,6 +9284,48 @@ ruleQEMREF returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     newLeafNode(this_ID_2, grammarAccess.getQEMREFAccess().getIDTerminalRuleCall_1_1()); 
     }
 )*)
+    ;
+
+
+
+
+
+// Entry rule entryRuleIREF
+entryRuleIREF returns [String current=null] 
+:
+	{ newCompositeNode(grammarAccess.getIREFRule()); } 
+	 iv_ruleIREF=ruleIREF 
+	 { $current=$iv_ruleIREF.current.getText(); }  
+	 EOF 
+;
+
+// Rule IREF
+ruleIREF returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule();
+    }:
+(    this_ID_0=RULE_ID    {
+		$current.merge(this_ID_0);
+    }
+
+    { 
+    newLeafNode(this_ID_0, grammarAccess.getIREFAccess().getIDTerminalRuleCall_0()); 
+    }
+(
+	kw=FullStop 
+    {
+        $current.merge(kw);
+        newLeafNode(kw, grammarAccess.getIREFAccess().getFullStopKeyword_1_0()); 
+    }
+    this_ID_2=RULE_ID    {
+		$current.merge(this_ID_2);
+    }
+
+    { 
+    newLeafNode(this_ID_2, grammarAccess.getIREFAccess().getIDTerminalRuleCall_1_1()); 
+    }
+)?)
     ;
 
 

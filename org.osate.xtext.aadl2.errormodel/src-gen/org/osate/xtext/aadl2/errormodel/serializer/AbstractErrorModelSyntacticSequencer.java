@@ -687,7 +687,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -697,7 +697,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -707,7 +707,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -716,7 +716,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -725,7 +725,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -734,7 +734,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ambiguity) 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -1039,7 +1039,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     )
 	 *     flows+=ErrorFlow EndPropagationsKeywords ';' (ambiguity) (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
 	 *     flows+=ErrorFlow EndPropagationsKeywords ';' (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
-	 *     name=QCREF (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
+	 *     name=IREF (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     propagations+=ErrorPropagation EndPropagationsKeywords ';' (ambiguity) (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
 	 *     propagations+=ErrorPropagation EndPropagationsKeywords ';' (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ErrorPropagationsKeywords EndPropagationsKeywords ';')? (ambiguity) CompositeErrorBehaviorKeywords 'states' states+=CompositeState
@@ -1149,7 +1149,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1159,7 +1159,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1169,7 +1169,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1178,7 +1178,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1187,7 +1187,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1196,7 +1196,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (ambiguity) 
@@ -1683,7 +1683,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -1693,7 +1693,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -1703,7 +1703,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -1712,7 +1712,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2020,7 +2020,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2030,7 +2030,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2040,7 +2040,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2049,7 +2049,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         paths+=PropagationPath
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2058,7 +2058,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         points+=PropagationPoint
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2067,7 +2067,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ambiguity) 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2318,13 +2318,13 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         ConnectionErrorKeywords 
 	 *         connectionErrorSources+=ConnectionErrorSource
 	 *     )
-	 *     name=QCREF (ambiguity) (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? CompositeErrorBehaviorKeywords 'states' states+=CompositeState
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'detections' errorDetections+=ErrorDetection
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'events' events+=ErrorBehaviorEvent
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'propagations' outgoingPropagationConditions+=OutgoingPropagationCondition
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords 'transitions' transitions+=ErrorBehaviorTransition
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords ModeMappingsKeywords errorStateToModeMappings+=ErrorStateToModeMapping
-	 *     name=QCREF (ambiguity) ComponentErrorBehaviorKeywords UseTransformationsKeywords useTransformation=[TypeTransformationSet|QEMREF]
+	 *     name=IREF (ambiguity) (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? CompositeErrorBehaviorKeywords 'states' states+=CompositeState
+	 *     name=IREF (ambiguity) ComponentErrorBehaviorKeywords 'detections' errorDetections+=ErrorDetection
+	 *     name=IREF (ambiguity) ComponentErrorBehaviorKeywords 'events' events+=ErrorBehaviorEvent
+	 *     name=IREF (ambiguity) ComponentErrorBehaviorKeywords 'propagations' outgoingPropagationConditions+=OutgoingPropagationCondition
+	 *     name=IREF (ambiguity) ComponentErrorBehaviorKeywords 'transitions' transitions+=ErrorBehaviorTransition
+	 *     name=IREF (ambiguity) ComponentErrorBehaviorKeywords ModeMappingsKeywords errorStateToModeMappings+=ErrorStateToModeMapping
+	 *     name=IREF (ambiguity) ComponentErrorBehaviorKeywords UseTransformationsKeywords useTransformation=[TypeTransformationSet|QEMREF]
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ambiguity) (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? CompositeErrorBehaviorKeywords 'states' states+=CompositeState
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ambiguity) ComponentErrorBehaviorKeywords 'detections' errorDetections+=ErrorDetection
 	 *     typeEquivalence=[TypeMappingSet|QEMREF] ';' (ambiguity) ComponentErrorBehaviorKeywords 'events' events+=ErrorBehaviorEvent
@@ -2436,7 +2436,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (rule end)
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
@@ -2446,7 +2446,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         name=QCREF 
+	 *         name=IREF 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
 	 *         (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? 
 	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
