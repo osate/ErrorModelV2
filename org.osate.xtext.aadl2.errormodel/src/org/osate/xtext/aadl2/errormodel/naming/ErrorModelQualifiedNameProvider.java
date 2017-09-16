@@ -5,7 +5,7 @@ import org.eclipse.xtext.naming.DefaultDeclarativeQualifiedNameProvider;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.osate.aadl2.AadlPackage;
 import org.osate.aadl2.NamedElement;
-import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Root;
+import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Package;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorStateMachine;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelLibrary;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorModelSubclause;
@@ -32,28 +32,27 @@ public class ErrorModelQualifiedNameProvider extends DefaultDeclarativeQualified
 			 */
 			NamedElement namedElement = (NamedElement) obj;
 			NamedElement root = namedElement.getElementRoot();
-			if (namedElement.getName() == null || !(root instanceof AadlPackage || root instanceof EMV2Root)
-					|| (obj instanceof ErrorModelSubclause && !(root instanceof EMV2Root))) {
+			if (namedElement.getName() == null
+					|| !(root instanceof AadlPackage || root instanceof EMV2Package
+							|| root instanceof ErrorModelLibrary)
+					|| (obj instanceof ErrorModelSubclause && !(root instanceof EMV2Package))) {
 				return null;
 			}
 			return getConverter().toQualifiedName(getTheName(namedElement));
 		}
-		if (obj instanceof AadlPackage) {
-			return getConverter().toQualifiedName(((AadlPackage) obj).getName());
+		if (obj instanceof AadlPackage || obj instanceof EMV2Package) {
+			return getConverter().toQualifiedName(((NamedElement) obj).getName());
 		}
 		return null;
 	}
 
 	protected String getTheName(NamedElement namedElement) {
 		NamedElement root = namedElement.getElementRoot();
-		if (root instanceof EMV2Root) {
-			if (namedElement instanceof ErrorModelLibrary || namedElement instanceof ErrorModelSubclause) {
+		if (root instanceof ErrorModelLibrary || root instanceof EMV2Package) {
+			if (namedElement instanceof ErrorModelLibrary) {
 				return namedElement.getName();
 			}
-			ErrorModelLibrary eml = ((EMV2Root) root).getLibrary();
-			if (eml != null) {
-				return eml.getName() + "::" + namedElement.getName();
-			}
+				return root.getName() + "::" + namedElement.getName();
 		}
 		if (namedElement instanceof ErrorModelLibrary) {
 			return "emv2$" + root.getName();

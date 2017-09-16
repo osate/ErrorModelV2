@@ -627,7 +627,7 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 		context.states.scopeFor
 	}
 
-	def scope_ErrorBehaviorState(Classifier context, EReference reference) {
+	def scope_ErrorBehaviorState(ErrorModelSubclause context, EReference reference) {
 		val stateMachine = context.allContainingClassifierEMV2Subclauses.map[useBehavior].filterNull.head
 		stateMachine?.states?.scopeFor ?: IScope.NULLSCOPE
 	}
@@ -640,8 +640,9 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 		context.scopeForErrorPropagation(DirectionType.OUT)
 	}
 
-	def scope_ErrorDetection_detectionReportingPort(Classifier context, EReference reference) {
-		val features = context.getAllFeatures.filter(TriggerPort)
+	def scope_ErrorDetection_detectionReportingPort(ErrorModelSubclause context, EReference reference) {
+		val cl = context.associatedClassifier
+		val features = cl.getAllFeatures.filter(TriggerPort)
 		val internalFeatures = if (context instanceof ComponentImplementation) {
 				context.allInternalFeatures
 			} else {
@@ -650,8 +651,9 @@ class ErrorModelScopeProvider extends PropertiesScopeProvider {
 		(features + internalFeatures).scopeFor
 	}
 
-	def scope_ErrorStateToModeMapping_mappedModes(ComponentClassifier context, EReference reference) {
-		context.allModes.scopeFor
+	def scope_ErrorStateToModeMapping_mappedModes(ErrorModelSubclause context, EReference reference) {
+		val cl = context.associatedClassifier
+		cl.allModes.scopeFor
 	}
 
 	def scope_QualifiedErrorBehaviorState_state(QualifiedErrorBehaviorState context, EReference reference) {

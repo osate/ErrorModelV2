@@ -64,6 +64,7 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
   {
     switch (eClass.getClassifierID())
     {
+      case ErrorModelPackage.EMV2_PACKAGE: return createEMV2Package();
       case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE: return createErrorModelSubclause();
       case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE_REFERENCE_DUMMY: return createErrorModelSubclauseReferenceDummy();
       case ErrorModelPackage.ERROR_MODEL_LIBRARY: return createErrorModelLibrary();
@@ -109,7 +110,6 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
       case ErrorModelPackage.COMPOSITE_STATE: return createCompositeState();
       case ErrorModelPackage.QUALIFIED_ERROR_BEHAVIOR_STATE: return createQualifiedErrorBehaviorState();
       case ErrorModelPackage.SUBCOMPONENT_ELEMENT: return createSubcomponentElement();
-      case ErrorModelPackage.EMV2_ROOT: return createEMV2Root();
       case ErrorModelPackage.OR_EXPRESSION: return createOrExpression();
       case ErrorModelPackage.AND_EXPRESSION: return createAndExpression();
       case ErrorModelPackage.ALL_EXPRESSION: return createAllExpression();
@@ -119,6 +119,17 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EMV2Package createEMV2Package()
+  {
+    EMV2PackageImpl emv2Package = new EMV2PackageImpl();
+    return emv2Package;
   }
 
   /**
@@ -614,17 +625,6 @@ public class ErrorModelFactoryImpl extends EFactoryImpl implements ErrorModelFac
   {
     SubcomponentElementImpl subcomponentElement = new SubcomponentElementImpl();
     return subcomponentElement;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EMV2Root createEMV2Root()
-  {
-    EMV2RootImpl emv2Root = new EMV2RootImpl();
-    return emv2Root;
   }
 
   /**

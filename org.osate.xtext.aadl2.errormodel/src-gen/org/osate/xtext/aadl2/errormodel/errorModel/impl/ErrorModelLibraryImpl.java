@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.osate.aadl2.impl.AnnexLibraryImpl;
+import org.osate.aadl2.impl.NamedElementImpl;
 
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2PropertyAssociation;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorStateMachine;
@@ -46,7 +46,7 @@ import org.osate.xtext.aadl2.errormodel.errorModel.TypeTransformationSet;
  *
  * @generated
  */
-public class ErrorModelLibraryImpl extends AnnexLibraryImpl implements ErrorModelLibrary
+public class ErrorModelLibraryImpl extends NamedElementImpl implements ErrorModelLibrary
 {
   /**
    * The cached value of the '{@link #getUseTypes() <em>Use Types</em>}' reference list.

@@ -15,7 +15,7 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 // allow either of the two to be the root. Needed dummy 'library' keyword
 EMV2Root returns aadl2::NamedElement: 
-	 {EMV2Root} (library=EMV2Library | subclauses+=EMV2Subclause*)
+	 EMV2Library | EMV2Package
 ;
 
 AnnexLibrary returns aadl2::AnnexLibrary:
@@ -50,6 +50,10 @@ TypeSetElement
 | SubcomponentElement | FeatureorPPReference | EMV2PropertyAssociation |EMV2Path | EMV2PathElement
 ;
 
+EMV2Package returns EMV2Package:
+	'package' name=QCREF
+	subclauses+=EMV2Subclause*
+;
 
 ErrorModelSubclause returns ErrorModelSubclause:
      {ErrorModelSubclause}//'{**' 
@@ -151,7 +155,7 @@ EMV2Subclause returns ErrorModelSubclause:
     ('properties'
  	(properties+=EMV2PropertyAssociation)+)?
 //	'**}'
-EndSubclauseKeywords ';'
+EndSubclauseKeywords 
 	 ;
 
 ErrorModelSubclauseReferenceDummy:  
@@ -195,25 +199,6 @@ EMV2Library returns ErrorModelLibrary:
 	(mappings+=TypeMappingSet )* 
 	(transformations+=TypeTransformationSet )*
 	) 
-	EndLibraryKeywords ';'
-	|
-	(	'package' name=QEMREF 'public'
-  'annex' ID  '{**' 
-	(
-    ErrorTypesKeywords
-   (UseTypesKeywords useTypes+=[ErrorModelLibrary|QEMREF] (',' useTypes+=[ErrorModelLibrary|QEMREF] )* ';')?
-    ('extends' extends+=[ErrorModelLibrary|QEMREF] (','extends+=[ErrorModelLibrary|QEMREF])*
-    'with')?     
-(((types+=TypeDefinition)|(typesets+=TypeSetDefinition)))*
-    ('properties'
- 	(properties+=BasicEMV2PropertyAssociation )+)?
-     EndTypesKeywords ';'
-	)?
-    (behaviors+=ErrorBehaviorStateMachine )*
-	(mappings+=TypeMappingSet )* 
-	(transformations+=TypeTransformationSet )*
-	'**}' ';' 'end' QEMREF ';'
-	)
 	 ;
 	
 
@@ -717,11 +702,7 @@ EndPropagationsKeywords:
 ;
 
 EndSubclauseKeywords:
-	'end' 'subclause'
-;
-
-EndLibraryKeywords:
-	'end' 'library'
+	'end' ';'
 ;
 
 EndTransformationsKeywords:

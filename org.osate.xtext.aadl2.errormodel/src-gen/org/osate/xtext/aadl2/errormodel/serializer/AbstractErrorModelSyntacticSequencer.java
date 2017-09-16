@@ -23,8 +23,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	protected ErrorModelGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_ConditionTerm_LeftParenthesisKeyword_4_0_a;
 	protected AbstractElementAlias match_ConditionTerm_LeftParenthesisKeyword_4_0_p;
-	protected AbstractElementAlias match_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q;
-	protected AbstractElementAlias match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q;
+	protected AbstractElementAlias match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_2_0_EndTypesKeywordsParserRuleCall_1_2_5_SemicolonKeyword_1_2_6__q;
 	protected AbstractElementAlias match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q;
 	protected AbstractElementAlias match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q;
 	protected AbstractElementAlias match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_10_0_EndConnectionKeywordsParserRuleCall_10_3_SemicolonKeyword_10_4__q;
@@ -44,8 +43,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 		grammarAccess = (ErrorModelGrammarAccess) access;
 		match_ConditionTerm_LeftParenthesisKeyword_4_0_a = new TokenAlias(true, true, grammarAccess.getConditionTermAccess().getLeftParenthesisKeyword_4_0());
 		match_ConditionTerm_LeftParenthesisKeyword_4_0_p = new TokenAlias(true, false, grammarAccess.getConditionTermAccess().getLeftParenthesisKeyword_4_0());
-		match_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getErrorTypesKeywordsParserRuleCall_0_1_2_0()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getEndTypesKeywordsParserRuleCall_0_1_2_5()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getSemicolonKeyword_0_1_2_6()));
-		match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getErrorTypesKeywordsParserRuleCall_1_6_0()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getEndTypesKeywordsParserRuleCall_1_6_5()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getSemicolonKeyword_1_6_6()));
+		match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_2_0_EndTypesKeywordsParserRuleCall_1_2_5_SemicolonKeyword_1_2_6__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getErrorTypesKeywordsParserRuleCall_1_2_0()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getEndTypesKeywordsParserRuleCall_1_2_5()), new TokenAlias(false, false, grammarAccess.getEMV2LibraryAccess().getSemicolonKeyword_1_2_6()));
 		match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getComponentErrorBehaviorKeywordsParserRuleCall_8_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndComponentKeywordsParserRuleCall_8_7()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_8_8()));
 		match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getCompositeErrorBehaviorKeywordsParserRuleCall_9_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndCompositeKeywordsParserRuleCall_9_2()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_9_3()));
 		match_EMV2Subclause___ConnectionErrorKeywordsParserRuleCall_10_0_EndConnectionKeywordsParserRuleCall_10_3_SemicolonKeyword_10_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getConnectionErrorKeywordsParserRuleCall_10_0()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getEndConnectionKeywordsParserRuleCall_10_3()), new TokenAlias(false, false, grammarAccess.getEMV2SubclauseAccess().getSemicolonKeyword_10_4()));
@@ -79,8 +77,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 			return getEndCompositeKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEndConnectionKeywordsRule())
 			return getEndConnectionKeywordsToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getEndLibraryKeywordsRule())
-			return getEndLibraryKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEndMappingsKeywordsRule())
 			return getEndMappingsKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getEndPathsKeywordsRule())
@@ -107,8 +103,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 			return getErrorSourceKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getErrorTypesKeywordsRule())
 			return getErrorTypesKeywordsToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getIDRule())
-			return getIDToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getInBindingKeywordsRule())
 			return getInBindingKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getInModesKeywordsRule())
@@ -119,8 +113,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 			return getPropagationPathsKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getPropagationPointKeywordsRule())
 			return getPropagationPointKeywordsToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getQEMREFRule())
-			return getQEMREFToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getRecoverEventKeywordsRule())
 			return getRecoverEventKeywordsToken(semanticObject, ruleCall, node);
 		else if (ruleCall.getRule() == grammarAccess.getRepairEventKeywordsRule())
@@ -235,17 +227,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	}
 	
 	/**
-	 * EndLibraryKeywords:
-	 * 	'end' 'library'
-	 * ;
-	 */
-	protected String getEndLibraryKeywordsToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "endlibrary";
-	}
-	
-	/**
 	 * EndMappingsKeywords:
 	 * 	'end' 'mappings'
 	 * ;
@@ -280,13 +261,13 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	
 	/**
 	 * EndSubclauseKeywords:
-	 * 	'end' 'subclause'
+	 * 	'end' ';'
 	 * ;
 	 */
 	protected String getEndSubclauseKeywordsToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (node != null)
 			return getTokenText(node);
-		return "endsubclause";
+		return "end;";
 	}
 	
 	/**
@@ -389,19 +370,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	}
 	
 	/**
-	 * terminal ID:	('a'..'z'
-	 *         |'A'..'Z'
-	 *         ) ( ('_')? ('a'..'z'
-	 *         |'A'..'Z'
-	 *         |'0'..'9'))*;
-	 */
-	protected String getIDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
-	}
-	
-	/**
 	 * InBindingKeywords:
 	 * 	'in' 'binding'
 	 * ;
@@ -454,16 +422,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 		if (node != null)
 			return getTokenText(node);
 		return "propagationpoint";
-	}
-	
-	/**
-	 * QEMREF:
-	 * 	 ID ('::' ID)* ;
-	 */
-	protected String getQEMREFToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
 	}
 	
 	/**
@@ -597,10 +555,8 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 				emit_ConditionTerm_LeftParenthesisKeyword_4_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_ConditionTerm_LeftParenthesisKeyword_4_0_p.equals(syntax))
 				emit_ConditionTerm_LeftParenthesisKeyword_4_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q.equals(syntax))
-				emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q.equals(syntax))
-				emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_2_0_EndTypesKeywordsParserRuleCall_1_2_5_SemicolonKeyword_1_2_6__q.equals(syntax))
+				emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_2_0_EndTypesKeywordsParserRuleCall_1_2_5_SemicolonKeyword_1_2_6__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q.equals(syntax))
 				emit_EMV2Subclause___ComponentErrorBehaviorKeywordsParserRuleCall_8_0_EndComponentKeywordsParserRuleCall_8_7_SemicolonKeyword_8_8__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_EMV2Subclause___CompositeErrorBehaviorKeywordsParserRuleCall_9_0_EndCompositeKeywordsParserRuleCall_9_2_SemicolonKeyword_9_3__q.equals(syntax))
@@ -664,26 +620,12 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     (ErrorTypesKeywords EndTypesKeywords ';')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     name=QEMREF (ambiguity) EndLibraryKeywords ';' (rule end)
+	 *     name=QEMREF (ambiguity) (rule end)
 	 *     name=QEMREF (ambiguity) behaviors+=ErrorBehaviorStateMachine
 	 *     name=QEMREF (ambiguity) mappings+=TypeMappingSet
 	 *     name=QEMREF (ambiguity) transformations+=TypeTransformationSet
 	 */
-	protected void emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_0_1_2_0_EndTypesKeywordsParserRuleCall_0_1_2_5_SemicolonKeyword_0_1_2_6__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     (ErrorTypesKeywords EndTypesKeywords ';')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     name=QEMREF 'public' 'annex' ID '{**' (ambiguity) '**}' ';' 'end' QEMREF ';' (rule end)
-	 *     name=QEMREF 'public' 'annex' ID '{**' (ambiguity) behaviors+=ErrorBehaviorStateMachine
-	 *     name=QEMREF 'public' 'annex' ID '{**' (ambiguity) mappings+=TypeMappingSet
-	 *     name=QEMREF 'public' 'annex' ID '{**' (ambiguity) transformations+=TypeTransformationSet
-	 */
-	protected void emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_6_0_EndTypesKeywordsParserRuleCall_1_6_5_SemicolonKeyword_1_6_6__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_EMV2Library___ErrorTypesKeywordsParserRuleCall_1_2_0_EndTypesKeywordsParserRuleCall_1_2_5_SemicolonKeyword_1_2_6__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -712,7 +654,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -763,7 +704,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -821,7 +761,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -874,7 +813,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -936,7 +874,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -998,7 +935,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1060,7 +996,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1149,7 +1084,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1182,7 +1116,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1233,7 +1166,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1289,7 +1221,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1312,7 +1243,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1356,17 +1286,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         properties+=EMV2PropertyAssociation
 	 *     )
 	 *     (
-	 *         transitions+=ErrorBehaviorTransition 
-	 *         EndComponentKeywords 
-	 *         ';' 
-	 *         (ambiguity) 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
-	 *         EndSubclauseKeywords 
-	 *         ';' 
-	 *         (rule end)
-	 *     )
-	 *     (
 	 *         typeEquivalence=[TypeMappingSet|QEMREF] 
 	 *         ';' 
 	 *         (ErrorPropagationsKeywords EndPropagationsKeywords ';')? 
@@ -1386,7 +1305,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1448,7 +1366,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1510,7 +1427,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1572,7 +1488,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1595,7 +1510,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1637,7 +1551,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         ConnectionErrorKeywords 
 	 *         connectionErrorSources+=ConnectionErrorSource
 	 *     )
-	 *     errorDetections+=ErrorDetection EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords ';' (rule end)
+	 *     errorDetections+=ErrorDetection EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords (rule end)
 	 *     errorDetections+=ErrorDetection EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? PropagationPathsKeywords paths+=PropagationPath
 	 *     errorDetections+=ErrorDetection EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? PropagationPathsKeywords points+=PropagationPoint
 	 *     errorDetections+=ErrorDetection EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords UseTransformationsKeywords typeTransformationSet=[TypeTransformationSet|QEMREF]
@@ -1646,7 +1560,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     errorStateToModeMappings+=ErrorStateToModeMapping EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? PropagationPathsKeywords points+=PropagationPoint
 	 *     errorStateToModeMappings+=ErrorStateToModeMapping EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords UseTransformationsKeywords typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     errorStateToModeMappings+=ErrorStateToModeMapping EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
-	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords ';' (rule end)
+	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords (rule end)
 	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? PropagationPathsKeywords paths+=PropagationPath
 	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? PropagationPathsKeywords points+=PropagationPoint
 	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords UseTransformationsKeywords typeTransformationSet=[TypeTransformationSet|QEMREF]
@@ -1657,6 +1571,7 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     outgoingPropagationConditions+=OutgoingPropagationCondition EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords UseTransformationsKeywords typeTransformationSet=[TypeTransformationSet|QEMREF]
 	 *     outgoingPropagationConditions+=OutgoingPropagationCondition EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
 	 *     propagations+=ErrorPropagation EndPropagationsKeywords ';' (ComponentErrorBehaviorKeywords EndComponentKeywords ';')? (ambiguity) ConnectionErrorKeywords connectionErrorSources+=ConnectionErrorSource
+	 *     transitions+=ErrorBehaviorTransition EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords (rule end)
 	 *     transitions+=ErrorBehaviorTransition EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? PropagationPathsKeywords paths+=PropagationPath
 	 *     transitions+=ErrorBehaviorTransition EndComponentKeywords ';' (ambiguity) (ConnectionErrorKeywords EndConnectionKeywords ';')? PropagationPathsKeywords points+=PropagationPoint
 	 *     transitions+=ErrorBehaviorTransition EndComponentKeywords ';' (ambiguity) ConnectionErrorKeywords UseTransformationsKeywords typeTransformationSet=[TypeTransformationSet|QEMREF]
@@ -1693,7 +1608,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1714,7 +1628,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1747,7 +1660,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1788,7 +1700,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1827,7 +1738,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1850,7 +1760,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1891,7 +1800,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1914,7 +1822,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -1957,7 +1864,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2000,7 +1906,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2043,7 +1948,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2066,7 +1970,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2093,13 +1996,13 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *     errorDetections+=ErrorDetection EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords points+=PropagationPoint
 	 *     errorStateToModeMappings+=ErrorStateToModeMapping EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords paths+=PropagationPath
 	 *     errorStateToModeMappings+=ErrorStateToModeMapping EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords points+=PropagationPoint
-	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords ';' (rule end)
+	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords (rule end)
 	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords paths+=PropagationPath
 	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords points+=PropagationPoint
 	 *     outgoingPropagationConditions+=OutgoingPropagationCondition EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords paths+=PropagationPath
 	 *     outgoingPropagationConditions+=OutgoingPropagationCondition EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords points+=PropagationPoint
 	 *     states+=CompositeState EndCompositeKeywords ';' (ambiguity) (PropagationPathsKeywords EndPathsKeywords ';')? 'properties' properties+=EMV2PropertyAssociation
-	 *     states+=CompositeState EndCompositeKeywords ';' (ambiguity) (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords ';' (rule end)
+	 *     states+=CompositeState EndCompositeKeywords ';' (ambiguity) (PropagationPathsKeywords EndPathsKeywords ';')? EndSubclauseKeywords (rule end)
 	 *     states+=CompositeState EndCompositeKeywords ';' (ambiguity) PropagationPathsKeywords paths+=PropagationPath
 	 *     states+=CompositeState EndCompositeKeywords ';' (ambiguity) PropagationPathsKeywords points+=PropagationPoint
 	 *     transitions+=ErrorBehaviorTransition EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ambiguity) PropagationPathsKeywords paths+=PropagationPath
@@ -2134,7 +2037,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2192,7 +2094,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2254,7 +2155,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2316,7 +2216,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2378,7 +2277,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (PropagationPathsKeywords EndPathsKeywords ';')? 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2483,7 +2381,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2504,7 +2401,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2516,17 +2412,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ambiguity) 
 	 *         'properties' 
 	 *         properties+=EMV2PropertyAssociation
-	 *     )
-	 *     (
-	 *         events+=ErrorBehaviorEvent 
-	 *         EndComponentKeywords 
-	 *         ';' 
-	 *         (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? 
-	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
-	 *         (ambiguity) 
-	 *         EndSubclauseKeywords 
-	 *         ';' 
-	 *         (rule end)
 	 *     )
 	 *     (
 	 *         flows+=ErrorFlow 
@@ -2548,7 +2433,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2569,7 +2453,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2590,7 +2473,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2613,7 +2495,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2634,7 +2515,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2657,7 +2537,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2680,7 +2559,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2703,7 +2581,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2726,7 +2603,6 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     (
@@ -2749,15 +2625,15 @@ public abstract class AbstractErrorModelSyntacticSequencer extends AbstractSynta
 	 *         (ConnectionErrorKeywords EndConnectionKeywords ';')? 
 	 *         (ambiguity) 
 	 *         EndSubclauseKeywords 
-	 *         ';' 
 	 *         (rule end)
 	 *     )
 	 *     connectionErrorSources+=ConnectionErrorSource EndConnectionKeywords ';' (ambiguity) 'properties' properties+=EMV2PropertyAssociation
-	 *     connectionErrorSources+=ConnectionErrorSource EndConnectionKeywords ';' (ambiguity) EndSubclauseKeywords ';' (rule end)
+	 *     connectionErrorSources+=ConnectionErrorSource EndConnectionKeywords ';' (ambiguity) EndSubclauseKeywords (rule end)
+	 *     events+=ErrorBehaviorEvent EndComponentKeywords ';' (CompositeErrorBehaviorKeywords EndCompositeKeywords ';')? (ConnectionErrorKeywords EndConnectionKeywords ';')? (ambiguity) EndSubclauseKeywords (rule end)
 	 *     states+=CompositeState EndCompositeKeywords ';' (ConnectionErrorKeywords EndConnectionKeywords ';')? (ambiguity) 'properties' properties+=EMV2PropertyAssociation
-	 *     states+=CompositeState EndCompositeKeywords ';' (ConnectionErrorKeywords EndConnectionKeywords ';')? (ambiguity) EndSubclauseKeywords ';' (rule end)
+	 *     states+=CompositeState EndCompositeKeywords ';' (ConnectionErrorKeywords EndConnectionKeywords ';')? (ambiguity) EndSubclauseKeywords (rule end)
 	 *     typeTransformationSet=[TypeTransformationSet|QEMREF] ';' EndConnectionKeywords ';' (ambiguity) 'properties' properties+=EMV2PropertyAssociation
-	 *     typeTransformationSet=[TypeTransformationSet|QEMREF] ';' EndConnectionKeywords ';' (ambiguity) EndSubclauseKeywords ';' (rule end)
+	 *     typeTransformationSet=[TypeTransformationSet|QEMREF] ';' EndConnectionKeywords ';' (ambiguity) EndSubclauseKeywords (rule end)
 	 */
 	protected void emit_EMV2Subclause___PropagationPathsKeywordsParserRuleCall_11_0_EndPathsKeywordsParserRuleCall_11_3_SemicolonKeyword_11_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

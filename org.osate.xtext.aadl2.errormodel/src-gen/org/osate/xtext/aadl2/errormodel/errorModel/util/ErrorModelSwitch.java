@@ -78,6 +78,15 @@ public class ErrorModelSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
+      case ErrorModelPackage.EMV2_PACKAGE:
+      {
+        EMV2Package emv2Package = (EMV2Package)theEObject;
+        T result = caseEMV2Package(emv2Package);
+        if (result == null) result = caseNamedElement(emv2Package);
+        if (result == null) result = caseElement(emv2Package);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case ErrorModelPackage.ERROR_MODEL_SUBCLAUSE:
       {
         ErrorModelSubclause errorModelSubclause = (ErrorModelSubclause)theEObject;
@@ -482,15 +491,6 @@ public class ErrorModelSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case ErrorModelPackage.EMV2_ROOT:
-      {
-        EMV2Root emv2Root = (EMV2Root)theEObject;
-        T result = caseEMV2Root(emv2Root);
-        if (result == null) result = caseNamedElement(emv2Root);
-        if (result == null) result = caseElement(emv2Root);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case ErrorModelPackage.OR_EXPRESSION:
       {
         OrExpression orExpression = (OrExpression)theEObject;
@@ -548,6 +548,22 @@ public class ErrorModelSwitch<T> extends Switch<T>
       }
       default: return defaultCase(theEObject);
     }
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>EMV2 Package</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>EMV2 Package</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEMV2Package(EMV2Package object)
+  {
+    return null;
   }
 
   /**
@@ -1266,22 +1282,6 @@ public class ErrorModelSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSubcomponentElement(SubcomponentElement object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>EMV2 Root</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>EMV2 Root</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseEMV2Root(EMV2Root object)
   {
     return null;
   }

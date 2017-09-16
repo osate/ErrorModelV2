@@ -8,6 +8,9 @@
     usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/resource/org.osate.aadl2/model/aadl2.genmodel#//aadl2">
   <genPackages prefix="ErrorModel" basePackage="org.osate.xtext.aadl2.errormodel"
       resource="XML" disposableProviderFactory="true" ecorePackage="ErrorModel.ecore#/">
+    <genClasses ecoreClass="ErrorModel.ecore#//EMV2Package">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EMV2Package/subclauses"/>
+    </genClasses>
     <genClasses ecoreClass="ErrorModel.ecore#//ErrorModelSubclause">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//ErrorModelSubclause/useTypes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//ErrorModelSubclause/typeEquivalence"/>
@@ -261,11 +264,6 @@
     <genClasses ecoreClass="ErrorModel.ecore#//SubcomponentElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//SubcomponentElement/subcomponent"/>
     </genClasses>
-    <genClasses ecoreClass="ErrorModel.ecore#//EMV2Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EMV2Root/library"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EMV2Root/subclauses"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EMV2Root/subclause"/>
-    </genClasses>
     <genClasses ecoreClass="ErrorModel.ecore#//OrExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//OrExpression/operands"/>
     </genClasses>
@@ -284,6 +282,11 @@
     </genClasses>
     <genClasses ecoreClass="ErrorModel.ecore#//SConditionElement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//SConditionElement/qualifiedState"/>
+    </genClasses>
+    <genClasses ecoreClass="ErrorModel.ecore#//EMV2Root">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EMV2Root/library"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EMV2Root/subclauses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//EMV2Root/subclause"/>
     </genClasses>
     <genClasses ecoreClass="ErrorModel.ecore#//PropertyAssociation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ErrorModel.ecore#//PropertyAssociation/property"/>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="errorModel" nsURI="http://www.aadl.info/EMV2" nsPrefix="errorModel">
+  <eClassifiers xsi:type="ecore:EClass" name="EMV2Package" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subclauses" upperBound="-1"
+        eType="#//ErrorModelSubclause" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ErrorModelSubclause" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//AnnexSubclause">
     <eStructuralFeatures xsi:type="ecore:EReference" name="useTypes" unique="false"
         upperBound="-1" eType="#//ErrorModelLibrary"/>
@@ -38,7 +42,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="ErrorModelSubclauseReferenceDummy">
     <eStructuralFeatures xsi:type="ecore:EReference" name="xref" eType="#//ErrorModelSubclause"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ErrorModelLibrary" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//AnnexLibrary">
+  <eClassifiers xsi:type="ecore:EClass" name="ErrorModelLibrary" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement platform:/resource/org.osate.aadl2/model/aadl2.ecore#//AnnexLibrary">
     <eStructuralFeatures xsi:type="ecore:EReference" name="useTypes" unique="false"
         upperBound="-1" eType="#//ErrorModelLibrary"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="extends" unique="false"
@@ -317,12 +321,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SubcomponentElement" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//Element">
     <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponent" eType="ecore:EClass platform:/resource/org.osate.aadl2/model/aadl2.ecore#//Subcomponent"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EMV2Root" eSuperTypes="platform:/resource/org.osate.aadl2/model/aadl2.ecore#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="library" eType="#//ErrorModelLibrary"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subclauses" upperBound="-1"
-        eType="#//ErrorModelSubclause" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OrExpression" eSuperTypes="#//ConditionExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="operands" upperBound="-1"

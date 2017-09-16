@@ -38,10 +38,10 @@ import org.osate.xtext.aadl2.errormodel.errorModel.BranchValue;
 import org.osate.xtext.aadl2.errormodel.errorModel.CompositeState;
 import org.osate.xtext.aadl2.errormodel.errorModel.ConditionElement;
 import org.osate.xtext.aadl2.errormodel.errorModel.ConnectionErrorSource;
+import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Package;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Path;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2PathElement;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2PropertyAssociation;
-import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Root;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorState;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorStateMachine;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorTransition;
@@ -246,6 +246,9 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 			case ErrorModelPackage.CONNECTION_ERROR_SOURCE:
 				sequence_ConnectionErrorSource(context, (ConnectionErrorSource) semanticObject); 
 				return; 
+			case ErrorModelPackage.EMV2_PACKAGE:
+				sequence_EMV2Package(context, (EMV2Package) semanticObject); 
+				return; 
 			case ErrorModelPackage.EMV2_PATH:
 				if (rule == grammarAccess.getBasicEMV2PathRule()) {
 					sequence_BasicEMV2Path(context, (EMV2Path) semanticObject); 
@@ -283,9 +286,6 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 					return; 
 				}
 				else break;
-			case ErrorModelPackage.EMV2_ROOT:
-				sequence_EMV2Root(context, (EMV2Root) semanticObject); 
-				return; 
 			case ErrorModelPackage.ERROR_BEHAVIOR_STATE:
 				sequence_ErrorBehaviorState(context, (ErrorBehaviorState) semanticObject); 
 				return; 
@@ -305,7 +305,8 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 				sequence_ErrorEvent(context, (ErrorEvent) semanticObject); 
 				return; 
 			case ErrorModelPackage.ERROR_MODEL_LIBRARY:
-				if (rule == grammarAccess.getEMV2LibraryRule()) {
+				if (rule == grammarAccess.getEMV2RootRule()
+						|| rule == grammarAccess.getEMV2LibraryRule()) {
 					sequence_EMV2Library(context, (ErrorModelLibrary) semanticObject); 
 					return; 
 				}
@@ -665,33 +666,35 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 	
 	/**
 	 * Contexts:
+	 *     EMV2Root returns ErrorModelLibrary
 	 *     EMV2Library returns ErrorModelLibrary
 	 *
 	 * Constraint:
 	 *     (
-	 *         (
-	 *             name=QEMREF 
-	 *             (useTypes+=[ErrorModelLibrary|QEMREF] useTypes+=[ErrorModelLibrary|QEMREF]*)? 
-	 *             (extends+=[ErrorModelLibrary|QEMREF] extends+=[ErrorModelLibrary|QEMREF]*)? 
-	 *             (types+=TypeDefinition | typesets+=TypeSetDefinition)* 
-	 *             properties+=BasicEMV2PropertyAssociation* 
-	 *             behaviors+=ErrorBehaviorStateMachine* 
-	 *             mappings+=TypeMappingSet* 
-	 *             transformations+=TypeTransformationSet*
-	 *         ) | 
-	 *         (
-	 *             name=QEMREF 
-	 *             (useTypes+=[ErrorModelLibrary|QEMREF] useTypes+=[ErrorModelLibrary|QEMREF]*)? 
-	 *             (extends+=[ErrorModelLibrary|QEMREF] extends+=[ErrorModelLibrary|QEMREF]*)? 
-	 *             (types+=TypeDefinition | typesets+=TypeSetDefinition)* 
-	 *             properties+=BasicEMV2PropertyAssociation* 
-	 *             behaviors+=ErrorBehaviorStateMachine* 
-	 *             mappings+=TypeMappingSet* 
-	 *             transformations+=TypeTransformationSet*
-	 *         )
+	 *         name=QEMREF 
+	 *         (useTypes+=[ErrorModelLibrary|QEMREF] useTypes+=[ErrorModelLibrary|QEMREF]*)? 
+	 *         (extends+=[ErrorModelLibrary|QEMREF] extends+=[ErrorModelLibrary|QEMREF]*)? 
+	 *         (types+=TypeDefinition | typesets+=TypeSetDefinition)* 
+	 *         properties+=BasicEMV2PropertyAssociation* 
+	 *         behaviors+=ErrorBehaviorStateMachine* 
+	 *         mappings+=TypeMappingSet* 
+	 *         transformations+=TypeTransformationSet*
 	 *     )
 	 */
 	protected void sequence_EMV2Library(ISerializationContext context, ErrorModelLibrary semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EMV2Root returns EMV2Package
+	 *     EMV2Package returns EMV2Package
+	 *
+	 * Constraint:
+	 *     (name=QCREF subclauses+=EMV2Subclause*)
+	 */
+	protected void sequence_EMV2Package(ISerializationContext context, EMV2Package semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -748,18 +751,6 @@ public abstract class AbstractErrorModelSemanticSequencer extends PropertiesSema
 	 *     )
 	 */
 	protected void sequence_EMV2PropertyAssociation(ISerializationContext context, EMV2PropertyAssociation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     EMV2Root returns EMV2Root
-	 *
-	 * Constraint:
-	 *     (library=EMV2Library | subclauses+=EMV2Subclause+)?
-	 */
-	protected void sequence_EMV2Root(ISerializationContext context, EMV2Root semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

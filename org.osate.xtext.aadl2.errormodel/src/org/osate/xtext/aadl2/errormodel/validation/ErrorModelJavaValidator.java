@@ -34,10 +34,10 @@ import org.osate.aadl2.Subcomponent;
 import org.osate.aadl2.modelsupport.util.AadlUtil;
 import org.osate.aadl2.util.Aadl2Util;
 import org.osate.xtext.aadl2.errormodel.errorModel.ConditionElement;
+import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Package;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Path;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2PathElement;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2PropertyAssociation;
-import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Root;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorEvent;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorState;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorStateMachine;
@@ -445,10 +445,11 @@ public class ErrorModelJavaValidator extends AbstractErrorModelJavaValidator {
 	}
 
 	private void checkSubclauseAssociationToClassifier(ErrorModelSubclause emsc) {
-		if (emsc.eContainer() instanceof EMV2Root) {
+		if (emsc.eContainer() instanceof EMV2Package) {
 			ComponentClassifier cl = EMV2Util.getAssociatedClassifier(emsc);
 			if (cl == null) {
-				warning(emsc, "EMV2 subclause name '" + emsc.getName() + "' does not identify a component classifier.");
+				warning(emsc, "EMV2 subclause name '" + emsc.getQualifiedName()
+						+ "' does not identify a component classifier.");
 			}
 		}
 	}
@@ -457,7 +458,7 @@ public class ErrorModelJavaValidator extends AbstractErrorModelJavaValidator {
 	private void checkDuplicateSubclause(ErrorModelSubclause emsc) {
 		ErrorModelSubclause duplicate = null;
 		ComponentClassifier cl = null;
-		if (emsc.eContainer() instanceof EMV2Root) {
+		if (emsc.eContainer() instanceof EMV2Package) {
 			cl = EMV2Util.getAssociatedClassifier(emsc);
 			duplicate = EMV2Util.getEmbeddedEMV2Subclause(cl);
 		} else {

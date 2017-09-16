@@ -47,6 +47,7 @@ import org.osate.xtext.aadl2.errormodel.errorModel.CompositeState;
 import org.osate.xtext.aadl2.errormodel.errorModel.ConditionElement;
 import org.osate.xtext.aadl2.errormodel.errorModel.ConditionExpression;
 import org.osate.xtext.aadl2.errormodel.errorModel.ConnectionErrorSource;
+import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Package;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2Path;
 import org.osate.xtext.aadl2.errormodel.errorModel.EMV2PathElement;
 import org.osate.xtext.aadl2.errormodel.errorModel.ErrorBehaviorEvent;
@@ -184,7 +185,15 @@ public class EMV2Util {
 		if (emsc == null || emsc.getName().equalsIgnoreCase(ErrorModelAnnexName)) {
 			return null;
 		}
-		return ScopeUtil.eInstance.lookupClassifier(emsc.eResource(), emsc.getName());
+		return ScopeUtil.eInstance.lookupClassifier(emsc.eResource(), getQualifiedName(emsc));
+	}
+
+	public static String getQualifiedName(ErrorModelSubclause emsc) {
+		if (emsc.eContainer() instanceof EMV2Package) {
+			EMV2Package emp = (EMV2Package) emsc.eContainer();
+			return emp.getName() + "::" + emsc.getName();
+		}
+		return emsc.getName();
 	}
 
 	public static ComponentImplementation getAssociatedComponentImplementation(Element emv2Element) {

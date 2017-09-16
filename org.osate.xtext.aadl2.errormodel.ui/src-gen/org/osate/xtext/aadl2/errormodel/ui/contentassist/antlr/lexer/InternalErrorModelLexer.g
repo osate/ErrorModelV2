@@ -84,15 +84,11 @@ Ormore : ('O'|'o')('R'|'r')('M'|'m')('O'|'o')('R'|'r')('E'|'e');
 
 Others : ('O'|'o')('T'|'t')('H'|'h')('E'|'e')('R'|'r')('S'|'s');
 
-Public : ('P'|'p')('U'|'u')('B'|'b')('L'|'l')('I'|'i')('C'|'c');
-
 Repair : ('R'|'r')('E'|'e')('P'|'p')('A'|'a')('I'|'i')('R'|'r');
 
 Source : ('S'|'s')('O'|'o')('U'|'u')('R'|'r')('C'|'c')('E'|'e');
 
 States : ('S'|'s')('T'|'t')('A'|'a')('T'|'t')('E'|'e')('S'|'s');
-
-Annex : ('A'|'a')('N'|'n')('N'|'n')('E'|'e')('X'|'x');
 
 Delta : ('D'|'d')('E'|'e')('L'|'l')('T'|'t')('A'|'a');
 
@@ -130,8 +126,6 @@ When : ('W'|'w')('H'|'h')('E'|'e')('N'|'n');
 
 With : ('W'|'w')('I'|'i')('T'|'t')('H'|'h');
 
-AsteriskAsteriskRightCurlyBracket : '*''*''}';
-
 PlusSignEqualsSignGreaterThanSign : '+''=''>';
 
 RightSquareBracketHyphenMinusGreaterThanSign : ']''-''>';
@@ -149,8 +143,6 @@ Out : ('O'|'o')('U'|'u')('T'|'t');
 Set : ('S'|'s')('E'|'e')('T'|'t');
 
 Use : ('U'|'u')('S'|'s')('E'|'e');
-
-LeftCurlyBracketAsteriskAsterisk : '{''*''*';
 
 HyphenMinusGreaterThanSign : '-''>';
 

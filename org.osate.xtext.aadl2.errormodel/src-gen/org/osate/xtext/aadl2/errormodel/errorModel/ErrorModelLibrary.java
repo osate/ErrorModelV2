@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 import org.osate.aadl2.AnnexLibrary;
+import org.osate.aadl2.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ import org.osate.aadl2.AnnexLibrary;
  * @model
  * @generated
  */
-public interface ErrorModelLibrary extends EObject, AnnexLibrary
+public interface ErrorModelLibrary extends EObject, NamedElement, AnnexLibrary
 {
   /**
    * Returns the value of the '<em><b>Use Types</b></em>' reference list.
