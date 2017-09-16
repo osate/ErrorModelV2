@@ -47,8 +47,9 @@ public class EMV2TransientValueService extends DefaultTransientValueService {
 	@Override
 	public boolean isTransient(EObject owner, EStructuralFeature feature, int index) {
 		if (owner instanceof ErrorModelLibrary && feature == Aadl2Package.eINSTANCE.getNamedElement_Name()
+				&& owner.eContainer() == null
 				|| (owner instanceof ErrorModelSubclause && feature == Aadl2Package.eINSTANCE.getNamedElement_Name()
-						&& !(owner.eContainer() instanceof EMV2Package))
+				&& !(owner.eContainer() instanceof EMV2Package))
 				|| owner instanceof ErrorModelLibrary && feature == Aadl2Package.eINSTANCE.getNamedElement_Name()) {
 			return true;
 		}
