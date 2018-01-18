@@ -12,18 +12,18 @@ public class FaultTreeExport {
 
 	public static void exportFaultTree(FaultTree ft) {
 		SystemInstance si = ((InstanceObject) ft.getRoot().getRelatedInstanceObject()).getSystemInstance();
-		WriteToFile xmlFile = new WriteToFile("fta", si);
+		WriteToFile xmlFile = new WriteToFile("ftaExport", si);
 		xmlFile.setFileExtension("xml");
 		toXML(xmlFile, ft.getRoot());
 		xmlFile.saveToFile();
 
-		WriteToFile ftaFile = new WriteToFile("fta", si);
+		WriteToFile ftaFile = new WriteToFile("ftaExport", si);
 		ftaFile.setFileExtension("fta");
-		ftaFile.addOutput(WriteToFile.getFileName("fta", si) + ".ped\nS NULL 0\n3 fta\n");
+		ftaFile.addOutput(WriteToFile.getFileName("ftaExport", si) + ".ped\nS NULL 0\n3 fta\n");
 		toFTA(ftaFile, ft.getRoot());
 		ftaFile.saveToFile();
 
-		WriteToFile pedFile = new WriteToFile("fta", si);
+		WriteToFile pedFile = new WriteToFile("ftaExport", si);
 		pedFile.setFileExtension("ped");
 		toPED(pedFile, ft.getRoot());
 		pedFile.saveToFile();
@@ -48,7 +48,7 @@ public class FaultTreeExport {
 			report.addOutput(" type=\"xor\"");
 		}
 		String description = FaultTreeUtils.getHazardDescription(root);
-		if (description.isEmpty()) {
+		if (description == null || description.isEmpty()) {
 			description = FaultTreeUtils.getDescription(root);
 		}
 		report.addOutput(" description=" + description);
@@ -73,7 +73,7 @@ public class FaultTreeExport {
 				prob = 0.1;
 			}
 			description = FaultTreeUtils.getHazardDescription(root);
-			if (description.isEmpty()) {
+			if (description == null || description.isEmpty()) {
 				description = FaultTreeUtils.getDescription(root);
 			}
 			report.addOutputNewline(root.getName() + ";;B;" + description + ";" + prob + ";L;");
