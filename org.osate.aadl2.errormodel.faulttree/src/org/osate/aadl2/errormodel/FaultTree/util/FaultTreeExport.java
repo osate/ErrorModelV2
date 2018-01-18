@@ -12,18 +12,18 @@ public class FaultTreeExport {
 
 	public static void exportFaultTree(FaultTree ft) {
 		SystemInstance si = ((InstanceObject) ft.getRoot().getRelatedInstanceObject()).getSystemInstance();
-		WriteToFile xmlFile = new WriteToFile("FTA", si);
+		WriteToFile xmlFile = new WriteToFile("fta", si);
 		xmlFile.setFileExtension("xml");
 		toXML(xmlFile, ft.getRoot());
 		xmlFile.saveToFile();
 
-		WriteToFile ftaFile = new WriteToFile("FTA", si);
+		WriteToFile ftaFile = new WriteToFile("fta", si);
 		ftaFile.setFileExtension("fta");
-		ftaFile.addOutput(WriteToFile.getFileName("FTA", si) + ".ped\nS NULL 0\n3 fta\n");
-		toPED(ftaFile, ft.getRoot());
+		ftaFile.addOutput(WriteToFile.getFileName("fta", si) + ".ped\nS NULL 0\n3 fta\n");
+		toFTA(ftaFile, ft.getRoot());
 		ftaFile.saveToFile();
 
-		WriteToFile pedFile = new WriteToFile("FTA", si);
+		WriteToFile pedFile = new WriteToFile("fta", si);
 		pedFile.setFileExtension("ped");
 		toPED(pedFile, ft.getRoot());
 		pedFile.saveToFile();
@@ -47,9 +47,11 @@ public class FaultTreeExport {
 		} else if (root.getSubEventLogic() == LogicOperation.XOR) {
 			report.addOutput(" type=\"xor\"");
 		}
-		if (root.getMessage() != null) {
-			report.addOutput(" description=" + root.getMessage());
+		String description = FaultTreeUtils.getHazardDescription(root);
+		if (description.isEmpty()) {
+			description = FaultTreeUtils.getDescription(root);
 		}
+		report.addOutput(" description=" + description);
 		report.addOutputNewline(">");
 		for (Event e : root.getSubEvents()) {
 			toXML(report, e);
@@ -70,10 +72,9 @@ public class FaultTreeExport {
 			if (prob == 0) {
 				prob = 0.1;
 			}
-			if (root.getMessage() != null) {
-				description = root.getMessage();
-			} else {
-				description = root.getName() + "(no extended description)";
+			description = FaultTreeUtils.getHazardDescription(root);
+			if (description.isEmpty()) {
+				description = FaultTreeUtils.getDescription(root);
 			}
 			report.addOutputNewline(root.getName() + ";;B;" + description + ";" + prob + ";L;");
 			return;
