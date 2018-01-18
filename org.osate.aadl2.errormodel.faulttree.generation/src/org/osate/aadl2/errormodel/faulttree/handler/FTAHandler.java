@@ -44,6 +44,7 @@ import org.eclipse.xtext.ui.util.ResourceUtil;
 import org.osate.aadl2.Feature;
 import org.osate.aadl2.errormodel.FaultTree.FaultTree;
 import org.osate.aadl2.errormodel.FaultTree.FaultTreeType;
+import org.osate.aadl2.errormodel.FaultTree.util.FaultTreeExport;
 import org.osate.aadl2.errormodel.PropagationGraph.PropagationGraph;
 import org.osate.aadl2.errormodel.PropagationGraph.PropagationPath;
 import org.osate.aadl2.errormodel.PropagationGraph.util.Util;
@@ -65,6 +66,7 @@ public final class FTAHandler extends AbstractHandler {
 	private static String ERROR_STATE_NAME = null;
 	private static FaultTreeType FAULT_TREE_TYPE = FaultTreeType.FAULT_TREE;
 	private static boolean GRAPHIC_VIEW = false;
+	private static boolean EXPORT_FT = false;
 	private static List<String> stateNames = null;
 
 
@@ -146,6 +148,7 @@ public final class FTAHandler extends AbstractHandler {
 			ERROR_STATE_NAME = diag.getValue();
 			FAULT_TREE_TYPE = diag.getFaultTreeType();
 			GRAPHIC_VIEW = diag.isGraphicView();
+			EXPORT_FT = diag.exPortFT();
 		});
 
 		if (ERROR_STATE_NAME != null) {
@@ -162,6 +165,9 @@ public final class FTAHandler extends AbstractHandler {
 				return IStatus.ERROR;
 			}
 			FaultTree ftmodel = CreateFTAModel.createModel(target, ERROR_STATE_NAME, FAULT_TREE_TYPE);
+			if (EXPORT_FT) {
+				FaultTreeExport.exportFaultTree(ftmodel);
+			}
 			URI newURI = EcoreUtil.getURI(ftmodel);
 			if (newURI != null) {
 				if (GRAPHIC_VIEW) {

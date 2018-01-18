@@ -24,7 +24,9 @@ public class FTADialog extends TitleAreaDialog {
 	private Button mincutsetBox;
 	private Button faultTraceBox;
 	private Button graphicViewBox;
+	private Button exportFTBox;
 	private static boolean isGraphicView = false;
+	private static boolean exportFT = false;
 	private static FaultTreeType faultTreeType = FaultTreeType.FAULT_TREE;
 	private String target = "";
 
@@ -84,6 +86,9 @@ public class FTADialog extends TitleAreaDialog {
 		graphicViewBox = new Button(container, SWT.CHECK);
 		graphicViewBox.setText("Show in graphical view (default is table view)");
 		graphicViewBox.setSelection(isGraphicView);
+		exportFTBox = new Button(container, SWT.CHECK);
+		exportFTBox.setText("Export fault tree in CAFTA and OpenFTA format");
+		exportFTBox.setSelection(exportFT);
 		return area;
 	}
 
@@ -95,6 +100,7 @@ public class FTADialog extends TitleAreaDialog {
 	private void saveInput() {
 		value = errorMode.getText();
 		isGraphicView = graphicViewBox.getSelection();
+		exportFT = exportFTBox.getSelection();
 		if (compositePartsBox.getSelection()) {
 			faultTreeType = FaultTreeType.COMPOSITE_PARTS;
 		} else if (faultTreeBox.getSelection()) {
@@ -122,6 +128,10 @@ public class FTADialog extends TitleAreaDialog {
 
 	public boolean isGraphicView() {
 		return isGraphicView;
+	}
+
+	public boolean exPortFT() {
+		return exportFT;
 	}
 
 }
