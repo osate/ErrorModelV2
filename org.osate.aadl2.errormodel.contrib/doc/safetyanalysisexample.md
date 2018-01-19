@@ -27,16 +27,18 @@ We will show how AADL and EMV2 can be used in this process. We demonstrate the u
 
 ## The GPS System and its External Interface
 
-The GPS is shown as a location provider in the functional architecture of the flight system. Other functions of the flight system are an automated flight guidance service and a flight control service that manipulates the flight surfaces. The flight system itself has a target probability of failure (likelihood) as a safety requirement, which was derived from an aircraft level system safety assessment. Similarly, severity and likelihood levels are assigned to the three functions the flight system utilizes.
+The GPS is shown as a location provider in the architecture of the flight system. Other functions of the flight system are an automated flight guidance service, a flight control service that manipulates the flight surfaces, and a power supply that feeds flight guidance and flight control. GPS is assumed to have its own internal power supply. 
 
-The AADL specification of the flight system uses an abstract feature to represent an observable failure point of the flight system.  The flight system also accepts input from the pilot. The specification indicates observable failure in the form of service omission and erratic control of the flight surfaces. The pilot may not provide input when expected or erratic input due to external circumstances.
+The flight system itself has a target probability of failure as a safety requirement, which was derived from an aircraft level system safety assessment. Similarly, severity and likelihood levels are assigned to the four functions the flight system utilizes.
+
+The AADL specification of the flight system uses an abstract feature to represent an observable failure point of the flight system. The specification indicates observable failure in the form of service omission and erratic control of the flight surfaces. The flight system also accepts input from the pilot. The pilot may not provide input when expected or erratic input due to external circumstances.
 
 The required (target) occurrence probability is shown as property on the error source declaration, indicating that this is the occurrence probability contributed by the flight system. The total probability of the flight system not providing service also takes into account assumed probability of pilot error.
 
 
 ![FGS Spec](images/FlightSystemSpec.png "FGS Spec")
 
-The following figure shows the functional flight system architecture.  It is declared in the AADL model as a tier1 architecture (FlightSystem.Tier1). Note that AutoFlightGuidance has an interface to a power supply that has not been connected. However, in the AADL specification, we can indicate the expected power requirements as well as expected failure rates.
+The following figure shows the flight system architecture.  It is declared in the AADL model as a tier1 architecture (FlightSystem.Tier1). 
 
 
 ![FGS AADL Model](images/FlightSystemImpl.png "FGS AADL model")
@@ -57,9 +59,9 @@ The second table reports the impact of failures external to the top-level system
 
 Users can determine all contributors to a flight system failure and assess whether the failure occurrence probabilities assigned to each subsystem and assumed by the context are sufficient to meet the maximum failure occurrence requirement for the flight system. Users can generate a fault tree by applying the Analyze Fault Tree command to the FlightSystem.Tier1 instance. Users identify ObservableFailure of error type ServiceOmission of FlightSystem as the fault tree root. The resulting fault tree is displayed graphically or in table view as chosen by the user. Both views are illustrated below for FlightSystem.Tier1.
 
-![FGS FTA](images/FlightSystem-FaultTreeGraphic.png "FGS FTA")
+![FGS FTA](images/flightsystemtier1-FT-graphic.png "FGS FTA")
 
-![FGS FTA](images/FlightSystem-FaultTreeTable.png "FGS FTA")
+![FGS FTA](images/flightsystemtier1-FT-table.png "FGS FTA")
 
 >Note that the fault tree analysis command lets users choose to generate a **fault tree**, a **fault contributor trace**, a **minimal cutset**, and a **parts fault tree**. A fault tree shows all potential failures (error events and error sources). A fault contributor traces shows all steps in the backward trace from the system failure to each of the contributors including incoming and outgoing propagations and error behavior states reached by transitions. A minimal cutset generates the smallest sets of contributors resulting in the sected system failure. The parts fault tree generates a fault tree from a parts model of a system with composite error state specification in terms of subcomponent error states.
 
@@ -120,7 +122,7 @@ The resulting fault tree results including occurrence probability are shown in t
 ![GPS 2 Sensor](images/fta-gps2sensorstatetable.png "GPS 2 Sensor")
 
 The fault occurrence probability of this redundant sensor design may be too close to the target values as we are early in the system design. Therefore, the architect of the flight system can quickly explore the an alternative flight system architecture with a dual GPS design and determine whether this alternative provides a better solution with respect to the target occurrence probability for the flight system.
-FlightSystem.Dual is a specification of such a design.
+FlightSystem.DualGPS is a specification of such a design.
 
 ![FS Dual](images/FS-Dual-Graphic.png "FS Dual")
 
